@@ -1,0 +1,14 @@
+[
+  {
+    "speaker": "角色A",
+    "text": "你好！歡迎來到這個遊戲。",
+    "portraitLeft": "https://images.unsplash.com/photo-1534528741702-a1c30e4cb8e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8&w=1000&q=80",
+    "portraitRight": null
+  },
+  {
+    "speaker": "角色B",
+    "text": "很高興在這裡見到你。準備好開始冒險了嗎？",
+    "portraitLeft": null,
+    "portraitRight": "https://images.unsplash.com/photo-1570295999919-56ceb5eacea6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8&w=1000&q=80"
+  }
+]
