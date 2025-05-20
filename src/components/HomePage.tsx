@@ -1,7 +1,11 @@
 import React from 'react'
 import { Play, Download, Settings, Upload } from 'lucide-react'
 
-const HomePage: React.FC = () => {
+interface HomePageProps {
+  onStartGame: () => void
+}
+
+const HomePage: React.FC<HomePageProps> = ({ onStartGame }) => {
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files
     if (files && files.length > 0) {
@@ -14,7 +18,7 @@ const HomePage: React.FC = () => {
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center space-y-6">
       <h1 className="text-4xl font-bold text-gray-800 mb-4">遊戲標題</h1>
       <div className="flex flex-col space-y-4">
-        <button className="button-primary" onClick={() => alert('開始新遊戲')}>
+        <button className="button-primary" onClick={onStartGame}>
           <Play className="mr-2 h-5 w-5" />
           開始新遊戲
         </button>
