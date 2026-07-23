@@ -1,17 +1,30 @@
-const dialogs = [
-  { speaker: "AI 助手", text: "你好！很高興能參與這個視覺小說開發項目。" },
-  { speaker: "玩家", text: "我也很期待！我們開始吧？" },
-  { speaker: "AI 助手", text: "當然，這是我們的第一個測試場景。" }
-];
+import dialogs from './data/script.json';
 
 let currentIndex = 0;
 const speakerEl = document.getElementById('speaker');
 const textEl = document.getElementById('text');
+const gameContainer = document.getElementById('game-container');
+const spriteEl = document.getElementById('sprite');
 
 function updateUI() {
   const current = dialogs[currentIndex];
-  speakerEl.textContent = current.speaker;
-  textEl.textContent = current.text;
+  
+  // Apply effect
+  gameContainer.classList.add('fade');
+  spriteEl.classList.add('fade');
+
+  setTimeout(() => {
+    speakerEl.textContent = current.speaker;
+    textEl.textContent = current.text;
+    
+    // Update visuals
+    gameContainer.style.backgroundImage = `url('/src/assets/${current.bg}')`;
+    spriteEl.src = `/src/assets/${current.sprite}`;
+    spriteEl.style.display = 'block';
+
+    gameContainer.classList.remove('fade');
+    spriteEl.classList.remove('fade');
+  }, 200);
 }
 
 function nextDialog() {
