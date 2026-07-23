@@ -22,16 +22,17 @@ function updateUI() {
     
     gameContainer.style.backgroundImage = `url('/assets/images/${current.bg}')`;
     
-    // Clear old sprites
     spriteContainer.innerHTML = '';
     
-    // Add new sprites
     current.sprites.forEach(s => {
       const wrapper = document.createElement('div');
       wrapper.className = `sprite-wrapper`;
-      // Direct positioning: left: 10%, center: 40%, right: 70%
-      const posMap = { left: '10%', center: '40%', right: '70%' };
-      wrapper.style.left = posMap[s.pos] || '40%';
+      
+      // Fix: Use transform: translateX to center the character correctly 
+      // instead of relying purely on left percentage which aligns the wrapper start edge
+      const posMap = { left: '15%', center: '50%', right: '85%' };
+      wrapper.style.left = posMap[s.pos] || '50%';
+      wrapper.style.transform = 'translateX(-50%)';
       
       const img = document.createElement('img');
       img.src = `/assets/images/${s.file}`;
