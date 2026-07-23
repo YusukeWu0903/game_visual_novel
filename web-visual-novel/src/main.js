@@ -4,9 +4,13 @@ let currentIndex = 0;
 const speakerEl = document.getElementById('speaker');
 const textEl = document.getElementById('text');
 const gameContainer = document.getElementById('game-container');
-const spriteContainer = document.getElementById('sprite-container') || document.createElement('div');
-spriteContainer.id = 'sprite-container';
-gameContainer.prepend(spriteContainer);
+let spriteContainer = document.getElementById('sprite-container');
+
+if (!spriteContainer) {
+  spriteContainer = document.createElement('div');
+  spriteContainer.id = 'sprite-container';
+  gameContainer.prepend(spriteContainer);
+}
 
 function updateUI() {
   const current = dialogs[currentIndex];
@@ -24,8 +28,10 @@ function updateUI() {
     // Add new sprites
     current.sprites.forEach(s => {
       const wrapper = document.createElement('div');
-      wrapper.className = `sprite-wrapper ${s.pos}`;
-      wrapper.style.left = s.pos === 'left' ? '10%' : s.pos === 'right' ? '60%' : '35%';
+      wrapper.className = `sprite-wrapper`;
+      // Direct positioning: left: 10%, center: 40%, right: 70%
+      const posMap = { left: '10%', center: '40%', right: '70%' };
+      wrapper.style.left = posMap[s.pos] || '40%';
       
       const img = document.createElement('img');
       img.src = `/assets/images/${s.file}`;
