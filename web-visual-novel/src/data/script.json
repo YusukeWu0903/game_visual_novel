@@ -3,16 +3,16 @@
     "id": 1,
     "speaker": "AI 助手",
     "text": "這是測試場景的第一幕。",
-    "bg": "bg1.jpg",
-    "sprite": "sprite1.png",
+    "bg": "bg01.webp",
+    "sprite": "Kasumi_Idle.webp",
     "effect": "fade"
   },
   {
     "id": 2,
     "speaker": "玩家",
     "text": "場景與角色應該要切換。",
-    "bg": "bg2.jpg",
-    "sprite": "sprite2.png",
+    "bg": "bg02.webp",
+    "sprite": "SwordDance_Idle.webp",
     "effect": "fade"
   }
 ]

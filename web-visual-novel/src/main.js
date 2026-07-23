@@ -18,8 +18,8 @@ function updateUI() {
     textEl.textContent = current.text;
     
     // Update visuals
-    gameContainer.style.backgroundImage = `url('/src/assets/${current.bg}')`;
-    spriteEl.src = `/src/assets/${current.sprite}`;
+    gameContainer.style.backgroundImage = `url('/assets/images/${current.bg}')`;
+    spriteEl.src = `/assets/images/${current.sprite}`;
     spriteEl.style.display = 'block';
 
     gameContainer.classList.remove('fade');
