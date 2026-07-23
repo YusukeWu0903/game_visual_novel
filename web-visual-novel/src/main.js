@@ -4,35 +4,42 @@ let currentIndex = 0;
 const speakerEl = document.getElementById('speaker');
 const textEl = document.getElementById('text');
 const gameContainer = document.getElementById('game-container');
-const spriteEl = document.getElementById('sprite');
+const spriteContainer = document.getElementById('sprite-container') || document.createElement('div');
+spriteContainer.id = 'sprite-container';
+gameContainer.prepend(spriteContainer);
 
 function updateUI() {
   const current = dialogs[currentIndex];
-  
-  // Apply effect
   gameContainer.classList.add('fade');
-  spriteEl.classList.add('fade');
-
+  
   setTimeout(() => {
     speakerEl.textContent = current.speaker;
     textEl.textContent = current.text;
     
-    // Update visuals
     gameContainer.style.backgroundImage = `url('/assets/images/${current.bg}')`;
-    spriteEl.src = `/assets/images/${current.sprite}`;
-    spriteEl.style.display = 'block';
+    
+    // Clear old sprites
+    spriteContainer.innerHTML = '';
+    
+    // Add new sprites
+    current.sprites.forEach(s => {
+      const wrapper = document.createElement('div');
+      wrapper.className = `sprite-wrapper ${s.pos}`;
+      wrapper.style.left = s.pos === 'left' ? '10%' : s.pos === 'right' ? '60%' : '35%';
+      
+      const img = document.createElement('img');
+      img.src = `/assets/images/${s.file}`;
+      wrapper.appendChild(img);
+      spriteContainer.appendChild(wrapper);
+    });
 
     gameContainer.classList.remove('fade');
-    spriteEl.classList.remove('fade');
   }, 200);
 }
 
-function nextDialog() {
+document.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % dialogs.length;
   updateUI();
-}
-
-document.addEventListener('click', nextDialog);
-document.addEventListener('keydown', (e) => { if (e.code === 'Space') nextDialog(); });
+});
 
 updateUI();

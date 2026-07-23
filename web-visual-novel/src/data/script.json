@@ -2,17 +2,22 @@
   {
     "id": 1,
     "speaker": "AI 助手",
-    "text": "這是測試場景的第一幕。",
+    "text": "這是測試多角色並排的功能，你看我能同時處理多個立繪。",
     "bg": "bg01.webp",
-    "sprite": "Kasumi_Idle.webp",
+    "sprites": [
+      { "file": "Kasumi_Idle.webp", "pos": "left" },
+      { "file": "SwordDance_Idle.webp", "pos": "right" }
+    ],
     "effect": "fade"
   },
   {
     "id": 2,
-    "speaker": "玩家",
-    "text": "場景與角色應該要切換。",
+    "speaker": "AI 助手",
+    "text": "透過這個架構，我可以輕鬆管理位移與透明度。",
     "bg": "bg02.webp",
-    "sprite": "SwordDance_Idle.webp",
+    "sprites": [
+      { "file": "Kasumi_Idle.webp", "pos": "center" }
+    ],
     "effect": "fade"
   }
 ]
