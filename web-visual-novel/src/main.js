@@ -28,9 +28,9 @@ function updateUI() {
       const wrapper = document.createElement('div');
       wrapper.className = `sprite-wrapper`;
       
-      // Fix: Use transform: translateX to center the character correctly 
-      // instead of relying purely on left percentage which aligns the wrapper start edge
-      const posMap = { left: '15%', center: '50%', right: '85%' };
+      // Adjusted posMap: left: 25%, center: 50%, right: 75%
+      // This pulls the side characters inward towards the center
+      const posMap = { left: '25%', center: '50%', right: '75%' };
       wrapper.style.left = posMap[s.pos] || '50%';
       wrapper.style.transform = 'translateX(-50%)';
       
