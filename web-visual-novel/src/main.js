@@ -31,6 +31,10 @@ fsBtn.addEventListener('click', (e) => {
   }
 });
 
+document.addEventListener('fullscreenchange', () => {
+  fsBtn.textContent = document.fullscreenElement ? '退出全螢幕' : '全螢幕';
+});
+
 // Speed control setup
 document.querySelectorAll('.speed-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
@@ -65,19 +69,37 @@ function updateUI() {
     speakerEl.textContent = current.speaker;
     typeText(current.text);
     
+    if (current.bgm) playBgm(current.bgm);
+    
     if (bgChanged) {
       gameContainer.style.backgroundImage = current.bg ? `url('/assets/images/${current.bg}')` : 'none';
       gameContainer.classList.remove('fade');
     }
     
-    // Process sprites with effects and movement
+    // Clear and re-render sprites
     spriteContainer.innerHTML = '';
+    const posCoords = { off_left: '-20%', left: '25%', center: '50%', right: '75%', off_right: '120%' };
+    
     current.sprites.forEach(s => {
       const wrapper = document.createElement('div');
       wrapper.className = `sprite-wrapper ${s.effect || ''}`;
-      const posMap = { left: '25%', center: '50%', right: '75%' };
-      wrapper.style.left = posMap[s.pos] || '50%';
-      wrapper.style.transform = 'translateX(-50%)';
+      
+      if (s.move) {
+          const [start, end] = s.move.split('->');
+          wrapper.style.left = posCoords[start] || '50%';
+          wrapper.style.transform = 'translateX(-50%)';
+          
+          // Force reflow and animate
+          requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                  wrapper.style.transition = 'all 0.8s ease-out';
+                  wrapper.style.left = posCoords[end] || '50%';
+              });
+          });
+      } else {
+          wrapper.style.left = posCoords[s.pos] || '50%';
+          wrapper.style.transform = 'translateX(-50%)';
+      }
       
       const img = document.createElement('img');
       img.src = `/assets/images/${s.file}`;
@@ -87,6 +109,13 @@ function updateUI() {
     
     prevState = { bg: current.bg, sprites: current.sprites, bgm: current.bgm };
   }, bgChanged ? 200 : 0);
+}
+
+function playBgm(filename) {
+  if (bgmAudio.src.includes(filename)) return;
+  bgmAudio.src = `/assets/audio/${filename}`;
+  bgmAudio.loop = true;
+  bgmAudio.play().catch(e => console.log("BGM deferred"));
 }
 
 document.getElementById('start-btn').addEventListener('click', () => {
