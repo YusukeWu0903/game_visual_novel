@@ -2,6 +2,8 @@ import dialogs from './data/script.json';
 
 let currentIndex = 0;
 let prevState = { bg: null, sprites: [] };
+let typingTimer = null;
+let currentSpeed = 50;
 
 const speakerEl = document.getElementById('speaker');
 const textEl = document.getElementById('text');
@@ -14,28 +16,39 @@ if (!spriteContainer) {
   gameContainer.prepend(spriteContainer);
 }
 
-function applyEffect(element, effect) {
-  if (effect === 'none') return;
-  element.classList.add(effect);
-  setTimeout(() => element.classList.remove(effect), 500);
+// Speed control setup
+document.querySelectorAll('.speed-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentSpeed = parseInt(btn.dataset.speed);
+    document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+function typeText(text) {
+  clearTimeout(typingTimer);
+  textEl.textContent = '';
+  let i = 0;
+  function nextChar() {
+    if (i < text.length) {
+      textEl.textContent += text.charAt(i);
+      i++;
+      typingTimer = setTimeout(nextChar, currentSpeed);
+    }
+  }
+  nextChar();
 }
 
 function updateUI() {
   const current = dialogs[currentIndex];
+  gameContainer.classList.add('fade');
   
-  // 1. Update Text (No transition)
-  speakerEl.textContent = current.speaker;
-  textEl.textContent = current.text;
-  
-  // 2. Update Background (Only if changed)
-  if (current.bg !== prevState.bg) {
+  setTimeout(() => {
+    speakerEl.textContent = current.speaker;
+    typeText(current.text);
     gameContainer.style.backgroundImage = `url('/assets/images/${current.bg}')`;
-    if (current.bgEffect !== 'none') applyEffect(gameContainer, current.bgEffect || 'fade');
-  }
-  
-  // 3. Update Sprites (Only if changed)
-  const spritesChanged = JSON.stringify(current.sprites) !== JSON.stringify(prevState.sprites);
-  if (spritesChanged) {
+    
     spriteContainer.innerHTML = '';
     current.sprites.forEach(s => {
       const wrapper = document.createElement('div');
@@ -48,17 +61,19 @@ function updateUI() {
       img.src = `/assets/images/${s.file}`;
       wrapper.appendChild(img);
       spriteContainer.appendChild(wrapper);
-      
-      if (s.effect !== 'none') applyEffect(wrapper, s.effect || 'fade');
     });
-  }
-  
-  prevState = { bg: current.bg, sprites: current.sprites };
+    gameContainer.classList.remove('fade');
+  }, 200);
 }
 
 document.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % dialogs.length;
-  updateUI();
+  if (textEl.textContent.length < dialogs[currentIndex].text.length) {
+    clearTimeout(typingTimer);
+    textEl.textContent = dialogs[currentIndex].text;
+  } else {
+    currentIndex = (currentIndex + 1) % dialogs.length;
+    updateUI();
+  }
 });
 
 updateUI();
