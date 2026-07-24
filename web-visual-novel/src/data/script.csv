@@ -1,0 +1,2 @@
+id,speaker,text,bg,sprite_left,sprite_center,sprite_right,char_move,char_effect
+1,AI 助手,測試位移與特效,bg01.webp,Kasumi_Idle.webp,,,Kasumi_Idle.webp:off_left->center,Kasumi_Idle.webp:tremble
