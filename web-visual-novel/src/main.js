@@ -8,6 +8,7 @@ let currentSpeed = 50;
 const speakerEl = document.getElementById('speaker');
 const textEl = document.getElementById('text');
 const gameContainer = document.getElementById('game-container');
+const fsBtn = document.getElementById('fs-btn');
 let spriteContainer = document.getElementById('sprite-container');
 
 if (!spriteContainer) {
@@ -16,15 +17,23 @@ if (!spriteContainer) {
   gameContainer.prepend(spriteContainer);
 }
 
-// Fullscreen toggle logic
-function toggleFullScreen() {
+// Fullscreen logic
+fsBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
   if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen().catch(err => console.log(err));
+    document.documentElement.requestFullscreen();
+    fsBtn.textContent = '退出全螢幕';
   } else {
-    if (document.exitFullscreen) document.exitFullscreen();
+    document.exitFullscreen();
+    fsBtn.textContent = '全螢幕';
   }
-}
+});
 
+document.addEventListener('fullscreenchange', () => {
+  fsBtn.textContent = document.fullscreenElement ? '退出全螢幕' : '全螢幕';
+});
+
+// Speed control setup
 document.querySelectorAll('.speed-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -82,14 +91,12 @@ function updateUI() {
 }
 
 document.addEventListener('click', (e) => {
-  if (e.target.classList.contains('speed-btn')) return;
+  if (e.target.classList.contains('speed-btn') || e.target.id === 'fs-btn') return;
   
   if (textEl.textContent.length < dialogs[currentIndex].text.length) {
     clearTimeout(typingTimer);
     textEl.textContent = dialogs[currentIndex].text;
   } else {
-    // Optional: trigger full screen on first click
-    if (!document.fullscreenElement) toggleFullScreen();
     currentIndex = (currentIndex + 1) % dialogs.length;
     updateUI();
   }
