@@ -1,9 +1,10 @@
 import dialogs from './data/script.json';
 
 let currentIndex = 0;
-let prevState = { bg: null, sprites: [] };
+let prevState = { bg: null, sprites: [], bgm: null };
 let typingTimer = null;
 let currentSpeed = 50;
+let bgmAudio = new Audio();
 
 const speakerEl = document.getElementById('speaker');
 const textEl = document.getElementById('text');
@@ -17,6 +18,26 @@ if (!spriteContainer) {
   gameContainer.prepend(spriteContainer);
 }
 
+// BGM Logic with Fade
+function playBgm(filename) {
+  if (bgmAudio.src.includes(filename)) return;
+  
+  const fadeOut = setInterval(() => {
+    if (bgmAudio.volume > 0.05) bgmAudio.volume -= 0.05;
+    else {
+      clearInterval(fadeOut);
+      bgmAudio.src = `/assets/audio/${filename}`;
+      bgmAudio.loop = true;
+      bgmAudio.volume = 0;
+      bgmAudio.play();
+      const fadeIn = setInterval(() => {
+        if (bgmAudio.volume < 1) bgmAudio.volume += 0.05;
+        else clearInterval(fadeIn);
+      }, 50);
+    }
+  }, 50);
+}
+
 // Fullscreen logic
 fsBtn.addEventListener('click', (e) => {
   e.stopPropagation();
@@ -27,10 +48,6 @@ fsBtn.addEventListener('click', (e) => {
     document.exitFullscreen();
     fsBtn.textContent = '全螢幕';
   }
-});
-
-document.addEventListener('fullscreenchange', () => {
-  fsBtn.textContent = document.fullscreenElement ? '退出全螢幕' : '全螢幕';
 });
 
 // Speed control setup
@@ -66,6 +83,9 @@ function updateUI() {
     speakerEl.textContent = current.speaker;
     typeText(current.text);
     
+    // Play BGM
+    if (current.bgm) playBgm(current.bgm);
+    
     if (bgChanged) {
       gameContainer.style.backgroundImage = `url('/assets/images/${current.bg}')`;
       gameContainer.classList.remove('fade');
@@ -86,7 +106,7 @@ function updateUI() {
         spriteContainer.appendChild(wrapper);
       });
     }
-    prevState = { bg: current.bg, sprites: current.sprites };
+    prevState = { bg: current.bg, sprites: current.sprites, bgm: current.bgm };
   }, bgChanged ? 200 : 0);
 }
 
