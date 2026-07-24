@@ -82,8 +82,9 @@ function updateUI() {
     
     current.sprites.forEach(s => {
       const wrapper = document.createElement('div');
-      // Fix: 確保 effect class 被正確加載
-      wrapper.className = `sprite-wrapper ${s.effect ? s.effect : ''}`;
+      // Fix: Explicit string concatenation for classes
+      const effectClass = s.effect ? ` ${s.effect}` : '';
+      wrapper.className = `sprite-wrapper${effectClass}`;
       
       if (s.move) {
           const [start, end] = s.move.split('->');
