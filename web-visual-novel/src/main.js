@@ -81,10 +81,9 @@ function updateUI() {
     const posCoords = { off_left: '-20%', left: '25%', center: '50%', right: '75%', off_right: '120%' };
     
     current.sprites.forEach(s => {
+      // 1. Create wrapper for positioning (Responsibility: Positioning)
       const wrapper = document.createElement('div');
-      // Fix: Explicit string concatenation for classes
-      const effectClass = s.effect ? ` ${s.effect}` : '';
-      wrapper.className = `sprite-wrapper${effectClass}`;
+      wrapper.className = `sprite-wrapper`;
       
       if (s.move) {
           const [start, end] = s.move.split('->');
@@ -102,8 +101,11 @@ function updateUI() {
           wrapper.style.transform = 'translateX(-50%)';
       }
       
+      // 2. Create img for effects (Responsibility: Acting)
       const img = document.createElement('img');
       img.src = `/assets/images/${s.file}`;
+      if (s.effect) img.className = s.effect; // Effect applied to img, NOT wrapper
+      
       wrapper.appendChild(img);
       spriteContainer.appendChild(wrapper);
     });
