@@ -1,6 +1,5 @@
 import csv
 import json
-import os
 
 def convert_csv_to_json(csv_path, json_path):
     data = []
@@ -8,14 +7,17 @@ def convert_csv_to_json(csv_path, json_path):
         reader = csv.DictReader(f)
         for row in reader:
             sprites = []
+            # Mapping columns to positions
             for pos in ['left', 'center', 'right']:
-                sprite_val = row.get(f'sprite_{pos}')
-                if sprite_val:
-                    sprite_obj = {'file': sprite_val, 'pos': pos}
-                    if row.get('char_move') and sprite_val in row['char_move']:
-                        sprite_obj['move'] = row['char_move'].split(':')[1].strip()
-                    if row.get('char_effect') and sprite_val in row['char_effect']:
-                        sprite_obj['effect'] = row['char_effect'].split(':')[1].strip()
+                file = row.get(f'sprite_{pos}')
+                if file:
+                    sprite_obj = {'file': file, 'pos': pos}
+                    # Parse movement if exists
+                    if row.get('char_move') and file in row['char_move']:
+                        sprite_obj['move'] = row['char_move'].split(':')[1]
+                    # Parse effect if exists
+                    if row.get('char_effect') and file in row['char_effect']:
+                        sprite_obj['effect'] = row['char_effect'].split(':')[1]
                     sprites.append(sprite_obj)
             
             data.append({

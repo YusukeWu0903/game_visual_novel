@@ -19,14 +19,6 @@ if (!spriteContainer) {
   gameContainer.prepend(spriteContainer);
 }
 
-// Play opening theme on startup
-window.addEventListener('load', () => {
-    bgmAudio.src = '/assets/audio/opening.mp3';
-    bgmAudio.loop = true;
-    bgmAudio.volume = 0.5;
-    bgmAudio.play().catch(e => console.log("Autoplay blocked, user interaction needed."));
-});
-
 // Fullscreen logic
 fsBtn.addEventListener('click', (e) => {
   e.stopPropagation();
@@ -37,10 +29,6 @@ fsBtn.addEventListener('click', (e) => {
     document.exitFullscreen();
     fsBtn.textContent = '全螢幕';
   }
-});
-
-document.addEventListener('fullscreenchange', () => {
-  fsBtn.textContent = document.fullscreenElement ? '退出全螢幕' : '全螢幕';
 });
 
 // Speed control setup
@@ -68,6 +56,7 @@ function typeText(text) {
 }
 
 function updateUI() {
+  if (!dialogs || dialogs.length === 0) return;
   const current = dialogs[currentIndex];
   const bgChanged = current.bg !== prevState.bg;
   if (bgChanged) gameContainer.classList.add('fade');
@@ -76,43 +65,32 @@ function updateUI() {
     speakerEl.textContent = current.speaker;
     typeText(current.text);
     
-    // Play BGM logic
-    if (current.bgm) playBgm(current.bgm);
-    
     if (bgChanged) {
-      gameContainer.style.backgroundImage = `url('/assets/images/${current.bg}')`;
+      gameContainer.style.backgroundImage = current.bg ? `url('/assets/images/${current.bg}')` : 'none';
       gameContainer.classList.remove('fade');
     }
     
-    const spritesChanged = JSON.stringify(current.sprites) !== JSON.stringify(prevState.sprites);
-    if (spritesChanged) {
-      spriteContainer.innerHTML = '';
-      current.sprites.forEach(s => {
-        const wrapper = document.createElement('div');
-        wrapper.className = `sprite-wrapper`;
-        const posMap = { left: '25%', center: '50%', right: '75%' };
-        wrapper.style.left = posMap[s.pos] || '50%';
-        wrapper.style.transform = 'translateX(-50%)';
-        const img = document.createElement('img');
-        img.src = `/assets/images/${s.file}`;
-        wrapper.appendChild(img);
-        spriteContainer.appendChild(wrapper);
-      });
-    }
+    // Process sprites with effects and movement
+    spriteContainer.innerHTML = '';
+    current.sprites.forEach(s => {
+      const wrapper = document.createElement('div');
+      wrapper.className = `sprite-wrapper ${s.effect || ''}`;
+      const posMap = { left: '25%', center: '50%', right: '75%' };
+      wrapper.style.left = posMap[s.pos] || '50%';
+      wrapper.style.transform = 'translateX(-50%)';
+      
+      const img = document.createElement('img');
+      img.src = `/assets/images/${s.file}`;
+      wrapper.appendChild(img);
+      spriteContainer.appendChild(wrapper);
+    });
+    
     prevState = { bg: current.bg, sprites: current.sprites, bgm: current.bgm };
   }, bgChanged ? 200 : 0);
 }
 
-function playBgm(filename) {
-  if (bgmAudio.src.includes(filename)) return;
-  bgmAudio.src = `/assets/audio/${filename}`;
-  bgmAudio.loop = true;
-  bgmAudio.play();
-}
-
 document.getElementById('start-btn').addEventListener('click', () => {
   startScreen.style.opacity = '0';
-  bgmAudio.pause(); // Stop opening theme
   setTimeout(() => {
     startScreen.style.display = 'none';
     updateUI();
