@@ -16,6 +16,15 @@ if (!spriteContainer) {
   gameContainer.prepend(spriteContainer);
 }
 
+// Fullscreen toggle logic
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(err => console.log(err));
+  } else {
+    if (document.exitFullscreen) document.exitFullscreen();
+  }
+}
+
 document.querySelectorAll('.speed-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -41,8 +50,6 @@ function typeText(text) {
 
 function updateUI() {
   const current = dialogs[currentIndex];
-  
-  // Logic: Only fade background if bg changes
   const bgChanged = current.bg !== prevState.bg;
   if (bgChanged) gameContainer.classList.add('fade');
   
@@ -55,7 +62,6 @@ function updateUI() {
       gameContainer.classList.remove('fade');
     }
     
-    // Always update sprites if they differ, but without全畫面轉場
     const spritesChanged = JSON.stringify(current.sprites) !== JSON.stringify(prevState.sprites);
     if (spritesChanged) {
       spriteContainer.innerHTML = '';
@@ -71,16 +77,19 @@ function updateUI() {
         spriteContainer.appendChild(wrapper);
       });
     }
-    
     prevState = { bg: current.bg, sprites: current.sprites };
   }, bgChanged ? 200 : 0);
 }
 
-document.addEventListener('click', () => {
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('speed-btn')) return;
+  
   if (textEl.textContent.length < dialogs[currentIndex].text.length) {
     clearTimeout(typingTimer);
     textEl.textContent = dialogs[currentIndex].text;
   } else {
+    // Optional: trigger full screen on first click
+    if (!document.fullscreenElement) toggleFullScreen();
     currentIndex = (currentIndex + 1) % dialogs.length;
     updateUI();
   }
