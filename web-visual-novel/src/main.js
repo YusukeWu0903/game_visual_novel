@@ -19,6 +19,14 @@ if (!spriteContainer) {
   gameContainer.prepend(spriteContainer);
 }
 
+// Play opening theme on startup
+window.addEventListener('load', () => {
+    bgmAudio.src = '/assets/audio/opening.mp3';
+    bgmAudio.loop = true;
+    bgmAudio.volume = 0.5;
+    bgmAudio.play().catch(e => console.log("Autoplay blocked, user interaction needed."));
+});
+
 // Fullscreen logic
 fsBtn.addEventListener('click', (e) => {
   e.stopPropagation();
@@ -29,6 +37,10 @@ fsBtn.addEventListener('click', (e) => {
     document.exitFullscreen();
     fsBtn.textContent = '全螢幕';
   }
+});
+
+document.addEventListener('fullscreenchange', () => {
+  fsBtn.textContent = document.fullscreenElement ? '退出全螢幕' : '全螢幕';
 });
 
 // Speed control setup
@@ -63,6 +75,8 @@ function updateUI() {
   setTimeout(() => {
     speakerEl.textContent = current.speaker;
     typeText(current.text);
+    
+    // Play BGM logic
     if (current.bgm) playBgm(current.bgm);
     
     if (bgChanged) {
@@ -98,6 +112,7 @@ function playBgm(filename) {
 
 document.getElementById('start-btn').addEventListener('click', () => {
   startScreen.style.opacity = '0';
+  bgmAudio.pause(); // Stop opening theme
   setTimeout(() => {
     startScreen.style.display = 'none';
     updateUI();
@@ -106,6 +121,7 @@ document.getElementById('start-btn').addEventListener('click', () => {
 
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('speed-btn') || e.target.id === 'fs-btn' || startScreen.style.display !== 'none') return;
+  
   if (textEl.textContent.length < dialogs[currentIndex].text.length) {
     clearTimeout(typingTimer);
     textEl.textContent = dialogs[currentIndex].text;
