@@ -31,6 +31,10 @@ fsBtn.addEventListener('click', (e) => {
   }
 });
 
+document.addEventListener('fullscreenchange', () => {
+  fsBtn.textContent = document.fullscreenElement ? '退出全螢幕' : '全螢幕';
+});
+
 // Speed control setup
 document.querySelectorAll('.speed-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
@@ -78,7 +82,8 @@ function updateUI() {
     
     current.sprites.forEach(s => {
       const wrapper = document.createElement('div');
-      wrapper.className = `sprite-wrapper ${s.effect || ''}`;
+      // Fix: 確保 effect class 被正確加載
+      wrapper.className = `sprite-wrapper ${s.effect ? s.effect : ''}`;
       
       if (s.move) {
           const [start, end] = s.move.split('->');
