@@ -3,14 +3,14 @@
     "id": 1,
     "speaker": "主角",
     "text": "呼...今天真是累壞了，總算能回房休息。",
-    "bg": "bg01.webp",
+    "bg": "bg02.webp",
     "sprites": []
   },
   {
     "id": 2,
     "speaker": "霞",
     "text": "哎呀，主公大人，您的肩膀看起來很僵硬呢。",
-    "bg": "bg01.webp",
+    "bg": "bg02.webp",
     "sprites": [
       {
         "file": "Kasumi_Idle.webp",
@@ -23,7 +23,7 @@
     "id": 3,
     "speaker": "主角",
     "text": "霞！？妳什麼時候出現在我床上的？",
-    "bg": "bg01.webp",
+    "bg": "bg02.webp",
     "sprites": [
       {
         "file": "Kasumi_Idle.webp",
@@ -35,7 +35,7 @@
     "id": 4,
     "speaker": "霞",
     "text": "忍者本來就該神出鬼沒呀。來，讓霞用『特別』的忍法幫您放鬆一下吧...",
-    "bg": "bg01.webp",
+    "bg": "bg02.webp",
     "sprites": [
       {
         "file": "Kasumi_Idle.webp",
@@ -48,7 +48,7 @@
     "id": 5,
     "speaker": "劍舞",
     "text": "區區躲在暗處的老鼠，也敢在主公的寢室裡放肆！",
-    "bg": "bg01.webp",
+    "bg": "bg02.webp",
     "sprites": [
       {
         "file": "Kasumi_Idle.webp",

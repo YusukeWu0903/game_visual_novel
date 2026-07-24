@@ -31,10 +31,6 @@ fsBtn.addEventListener('click', (e) => {
   }
 });
 
-document.addEventListener('fullscreenchange', () => {
-  fsBtn.textContent = document.fullscreenElement ? '退出全螢幕' : '全螢幕';
-});
-
 // Speed control setup
 document.querySelectorAll('.speed-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
@@ -69,6 +65,7 @@ function updateUI() {
     speakerEl.textContent = current.speaker;
     typeText(current.text);
     
+    // Play BGM
     if (current.bgm) playBgm(current.bgm);
     
     if (bgChanged) {
@@ -76,7 +73,6 @@ function updateUI() {
       gameContainer.classList.remove('fade');
     }
     
-    // Clear and re-render sprites
     spriteContainer.innerHTML = '';
     const posCoords = { off_left: '-20%', left: '25%', center: '50%', right: '75%', off_right: '120%' };
     
@@ -89,7 +85,6 @@ function updateUI() {
           wrapper.style.left = posCoords[start] || '50%';
           wrapper.style.transform = 'translateX(-50%)';
           
-          // Force reflow and animate
           requestAnimationFrame(() => {
               requestAnimationFrame(() => {
                   wrapper.style.transition = 'all 0.8s ease-out';

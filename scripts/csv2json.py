@@ -7,17 +7,18 @@ def convert_csv_to_json(csv_path, json_path):
         reader = csv.DictReader(f)
         for row in reader:
             sprites = []
-            # Mapping columns to positions
             for pos in ['left', 'center', 'right']:
                 file = row.get(f'sprite_{pos}')
                 if file:
                     sprite_obj = {'file': file, 'pos': pos}
-                    # Parse movement if exists
-                    if row.get('char_move') and file in row['char_move']:
-                        sprite_obj['move'] = row['char_move'].split(':')[1]
-                    # Parse effect if exists
-                    if row.get('char_effect') and file in row['char_effect']:
-                        sprite_obj['effect'] = row['char_effect'].split(':')[1]
+                    # Parse merged char_actions
+                    if row.get('char_actions'):
+                        for action in row['char_actions'].split(';'):
+                            if file in action:
+                                cmds = action.split(':')[1].split('|')
+                                for cmd in cmds:
+                                    if '->' in cmd: sprite_obj['move'] = cmd
+                                    else: sprite_obj['effect'] = cmd
                     sprites.append(sprite_obj)
             
             data.append({
@@ -25,6 +26,7 @@ def convert_csv_to_json(csv_path, json_path):
                 'speaker': row['speaker'],
                 'text': row['text'],
                 'bg': row['bg'],
+                'bgm': row.get('bgm', ''),
                 'sprites': sprites
             })
     with open(json_path, 'w', encoding='utf-8') as f:
