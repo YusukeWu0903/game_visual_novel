@@ -16,7 +16,6 @@ if (!spriteContainer) {
   gameContainer.prepend(spriteContainer);
 }
 
-// Speed control setup
 document.querySelectorAll('.speed-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -42,28 +41,39 @@ function typeText(text) {
 
 function updateUI() {
   const current = dialogs[currentIndex];
-  gameContainer.classList.add('fade');
+  
+  // Logic: Only fade background if bg changes
+  const bgChanged = current.bg !== prevState.bg;
+  if (bgChanged) gameContainer.classList.add('fade');
   
   setTimeout(() => {
     speakerEl.textContent = current.speaker;
     typeText(current.text);
-    gameContainer.style.backgroundImage = `url('/assets/images/${current.bg}')`;
     
-    spriteContainer.innerHTML = '';
-    current.sprites.forEach(s => {
-      const wrapper = document.createElement('div');
-      wrapper.className = `sprite-wrapper`;
-      const posMap = { left: '25%', center: '50%', right: '75%' };
-      wrapper.style.left = posMap[s.pos] || '50%';
-      wrapper.style.transform = 'translateX(-50%)';
-      
-      const img = document.createElement('img');
-      img.src = `/assets/images/${s.file}`;
-      wrapper.appendChild(img);
-      spriteContainer.appendChild(wrapper);
-    });
-    gameContainer.classList.remove('fade');
-  }, 200);
+    if (bgChanged) {
+      gameContainer.style.backgroundImage = `url('/assets/images/${current.bg}')`;
+      gameContainer.classList.remove('fade');
+    }
+    
+    // Always update sprites if they differ, but without全畫面轉場
+    const spritesChanged = JSON.stringify(current.sprites) !== JSON.stringify(prevState.sprites);
+    if (spritesChanged) {
+      spriteContainer.innerHTML = '';
+      current.sprites.forEach(s => {
+        const wrapper = document.createElement('div');
+        wrapper.className = `sprite-wrapper`;
+        const posMap = { left: '25%', center: '50%', right: '75%' };
+        wrapper.style.left = posMap[s.pos] || '50%';
+        wrapper.style.transform = 'translateX(-50%)';
+        const img = document.createElement('img');
+        img.src = `/assets/images/${s.file}`;
+        wrapper.appendChild(img);
+        spriteContainer.appendChild(wrapper);
+      });
+    }
+    
+    prevState = { bg: current.bg, sprites: current.sprites };
+  }, bgChanged ? 200 : 0);
 }
 
 document.addEventListener('click', () => {
