@@ -1,7 +1,17 @@
 import csv
 import json
+import os
 
-def convert_csv_to_json(csv_path, json_path):
+def convert_csv_to_json():
+    # Dynamic root path derivation: 
+    # Current script is at D:\game_visual_novel\scripts\csv2json.py
+    # Root is D:\game_visual_novel\
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(script_dir)
+    
+    csv_path = os.path.join(root_dir, "web-visual-novel", "src", "data", "script.csv")
+    json_path = os.path.join(root_dir, "web-visual-novel", "src", "data", "script.json")
+    
     data = []
     with open(csv_path, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -11,7 +21,6 @@ def convert_csv_to_json(csv_path, json_path):
                 file = row.get(f'sprite_{pos}')
                 if file:
                     sprite_obj = {'file': file, 'pos': pos}
-                    # Parse merged char_actions
                     if row.get('char_actions'):
                         for action in row['char_actions'].split(';'):
                             if file in action:
@@ -31,6 +40,7 @@ def convert_csv_to_json(csv_path, json_path):
             })
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+    print(f"Successfully converted {csv_path} to {json_path}")
 
 if __name__ == "__main__":
-    convert_csv_to_json("web-visual-novel/src/data/script.csv", "web-visual-novel/src/data/script.json")
+    convert_csv_to_json()
