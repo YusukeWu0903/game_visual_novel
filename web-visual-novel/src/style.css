@@ -14,6 +14,12 @@ body { margin: 0; overflow: hidden; background: #000; font-family: sans-serif; d
   transition: background 0.5s; 
   position: relative;
 }
+#start-screen {
+  position: absolute; width: 100%; height: 100%; background: #111; color: white;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; z-index: 200; transition: opacity 0.5s;
+}
+#start-screen h1 { font-size: 3rem; color: #ffcc00; }
+#start-screen button { padding: 10px 30px; font-size: 1.2rem; cursor: pointer; background: #333; color: white; border: 1px solid #555; }
 .sprite-wrapper { position: absolute; top: 20%; height: 120%; transition: all 0.5s ease; pointer-events: none; }
 .sprite-wrapper img { height: 100%; width: auto; object-fit: contain; display: block; }
 #dialog-box { width: 80%; height: 20%; background: rgba(0, 0, 0, 0.7); color: white; padding: 20px; box-sizing: border-box; border-radius: 10px; margin-bottom: 50px; display: flex; flex-direction: column; z-index: 100; position: relative; }

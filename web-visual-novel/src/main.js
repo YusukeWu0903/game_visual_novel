@@ -10,32 +10,13 @@ const speakerEl = document.getElementById('speaker');
 const textEl = document.getElementById('text');
 const gameContainer = document.getElementById('game-container');
 const fsBtn = document.getElementById('fs-btn');
+const startScreen = document.getElementById('start-screen');
 let spriteContainer = document.getElementById('sprite-container');
 
 if (!spriteContainer) {
   spriteContainer = document.createElement('div');
   spriteContainer.id = 'sprite-container';
   gameContainer.prepend(spriteContainer);
-}
-
-// BGM Logic with Fade
-function playBgm(filename) {
-  if (bgmAudio.src.includes(filename)) return;
-  
-  const fadeOut = setInterval(() => {
-    if (bgmAudio.volume > 0.05) bgmAudio.volume -= 0.05;
-    else {
-      clearInterval(fadeOut);
-      bgmAudio.src = `/assets/audio/${filename}`;
-      bgmAudio.loop = true;
-      bgmAudio.volume = 0;
-      bgmAudio.play();
-      const fadeIn = setInterval(() => {
-        if (bgmAudio.volume < 1) bgmAudio.volume += 0.05;
-        else clearInterval(fadeIn);
-      }, 50);
-    }
-  }, 50);
 }
 
 // Fullscreen logic
@@ -82,8 +63,6 @@ function updateUI() {
   setTimeout(() => {
     speakerEl.textContent = current.speaker;
     typeText(current.text);
-    
-    // Play BGM
     if (current.bgm) playBgm(current.bgm);
     
     if (bgChanged) {
@@ -110,9 +89,23 @@ function updateUI() {
   }, bgChanged ? 200 : 0);
 }
 
+function playBgm(filename) {
+  if (bgmAudio.src.includes(filename)) return;
+  bgmAudio.src = `/assets/audio/${filename}`;
+  bgmAudio.loop = true;
+  bgmAudio.play();
+}
+
+document.getElementById('start-btn').addEventListener('click', () => {
+  startScreen.style.opacity = '0';
+  setTimeout(() => {
+    startScreen.style.display = 'none';
+    updateUI();
+  }, 500);
+});
+
 document.addEventListener('click', (e) => {
-  if (e.target.classList.contains('speed-btn') || e.target.id === 'fs-btn') return;
-  
+  if (e.target.classList.contains('speed-btn') || e.target.id === 'fs-btn' || startScreen.style.display !== 'none') return;
   if (textEl.textContent.length < dialogs[currentIndex].text.length) {
     clearTimeout(typingTimer);
     textEl.textContent = dialogs[currentIndex].text;
@@ -121,5 +114,3 @@ document.addEventListener('click', (e) => {
     updateUI();
   }
 });
-
-updateUI();
