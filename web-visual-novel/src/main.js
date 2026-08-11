@@ -39,6 +39,10 @@ const PROGRESS_KEY = 'visual_novel_progress';
 // 已讀對話 ID 記錄
 let readDialogIds = new Set();
 
+// Fade 狀態管理 (畫面特效 - 全螢幕遮罩)
+let fadeState = 'none'; // 'none' | 'fading_in' | 'fading_out' | 'ended'
+const FADE_DURATION = 1000; // 1秒
+
 // UI 元素引用
 const speakerEl = document.getElementById('speaker');
 const textEl = document.getElementById('text');
@@ -48,6 +52,8 @@ const startScreen = document.getElementById('start-screen');
 const startBtn = document.getElementById('start-btn');
 const loadBtn = document.getElementById('load-btn');
 let spriteContainer = document.getElementById('sprite-container');
+const fadeOverlay = document.getElementById('fade-overlay');
+const returnMainBtn = document.getElementById('return-main-btn');
 
 if (!spriteContainer) {
     spriteContainer = document.createElement('div');
@@ -214,6 +220,12 @@ function setupEventListeners() {
         if (e.target === logModal) closeLogModal();
     });
 
+    // 返回主選單按鈕 (Fade Out 後顯示)
+    returnMainBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        resetToMainMenu();
+    });
+
     // 設定滑桿
     setupSettingSlider('master-volume', (val) => {
         settings.masterVolume = val / 100;
@@ -320,6 +332,7 @@ function setupEventListeners() {
             e.target.closest('#log-modal') ||
             e.target.closest('#history-panel') ||
             e.target.closest('#auto-indicator') ||
+            e.target.closest('#return-main-btn') ||
             startScreen.style.display !== 'none') return;
 
         // 隱藏 UI 模式
@@ -374,8 +387,109 @@ function setupSettingSlider(id, callback) {
     });
 }
 
+// ===== Fade 效果函式 (畫面特效 - 全螢幕遮罩) =====
+function startFadeIn(onComplete) {
+    if (fadeState !== 'none') return;
+    fadeState = 'fading_in';
+    
+    // 第一拍：讓遮罩「立即」變成全黑 (opacity 1，不觸發 transition)
+    fadeOverlay.style.transition = 'none';
+    fadeOverlay.style.opacity = '1';
+    
+    // 第二拍 (下一幀)：設定過渡，把 opacity 改回 0 → 觸發 1→0 淡出動畫
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            fadeOverlay.style.transition = 'opacity 1s ease';
+            fadeOverlay.style.opacity = '0';
+            
+            setTimeout(() => {
+                fadeState = 'none';
+                if (onComplete) onComplete();
+            }, FADE_DURATION);
+        });
+    });
+}
+
+function startFadeOut(onComplete) {
+    if (fadeState !== 'none') return;
+    fadeState = 'fading_out';
+    
+    // 第一拍：確保遮罩目前是透明 (opacity 0，不觸發 transition)
+    fadeOverlay.style.transition = 'none';
+    fadeOverlay.style.opacity = '0';
+    
+    // 第二拍 (下一幀)：設定過渡，把 opacity 改成 1 → 觸發 0→1 淡入動畫
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            fadeOverlay.style.transition = 'opacity 1s ease';
+            fadeOverlay.style.opacity = '1';
+            
+            setTimeout(() => {
+                fadeState = 'ended';
+                
+                // 顯示返回主選單按鈕
+                returnMainBtn.classList.add('visible');
+                
+                if (onComplete) onComplete();
+            }, FADE_DURATION);
+        });
+    });
+}
+
+// ===== 演戲完成 → 還原初始狀態 =====
+function resetToMainMenu() {
+    // --- 遮罩與 Fade 狀態 ---
+    fadeState = 'none';
+    fadeOverlay.style.transition = 'none';
+    fadeOverlay.style.opacity = '0';
+    returnMainBtn.classList.remove('visible');
+    
+    // --- 演戲核心狀態機 (回到初始) ---
+    currentIndex = 0;
+    prevState = { bg: null, sprites: [], bgm: null };
+    isTyping = false;
+    clearTimeout(typingTimer);
+    
+    // --- UI 元素顯示還原 (移除 inline display，恢復 CSS 定義) ---
+            document.getElementById('dialog-box').style.display = '';
+            document.getElementById('dialog-box').style.visibility = ''; // 移除 inline，落回 CSS hidden
+            document.getElementById('controls-area').style.display = '';
+    
+    // --- 清空畫面內容 ---
+    spriteContainer.innerHTML = '';
+    textEl.textContent = '';
+    speakerEl.textContent = '';
+    textEl.classList.remove('complete');
+    // 移除殘留的角色名稱標籤
+    const oldLabel = document.querySelector('.speaker-label');
+    if (oldLabel) oldLabel.remove();
+    
+    // --- 自動播放重置 ---
+    autoIndicator.classList.remove('visible');
+    autoPlay = false;
+    clearTimeout(autoPlayTimer);
+    
+    // --- 背景重置 ---
+    gameContainer.style.backgroundImage = 'none';
+    
+    // --- 音訊停止 ---
+    bgmAudio.pause();
+    bgmAudio.currentTime = 0;
+    
+    // --- 進度與已讀記錄重置 ---
+    readDialogIds.clear();
+    saveProgress();
+    
+    // --- 顯示主選單 (放最後，確保上面清空先完成) ---
+    startScreen.style.display = 'flex';
+    startScreen.classList.remove('hidden');
+}
+
 // ===== 對話推進邏輯 =====
 function advanceDialog() {
+    // 如果正在 Fade 中，阻止推進
+    if (fadeState !== 'none') return;
+    
     if (isTyping) {
         // 正在打字時，直接顯示完整文字
         clearTimeout(typingTimer);
@@ -384,11 +498,25 @@ function advanceDialog() {
         isTyping = false;
         return;
     }
-
+    
+    const current = dialogs[currentIndex];
+    const isLastDialog = currentIndex === dialogs.length - 1;
+    
+    // 檢查是否為最後一句且需要 Fade Out
+    if (isLastDialog && current.fade_out) {
+        // 記錄已讀
+        readDialogIds.add(current.id);
+        saveProgress();
+        
+        // 執行 Fade Out
+        startFadeOut();
+        return; // 不推進到下一句，等待使用者點擊返回主選單
+    }
+    
     // 記錄已讀
-    readDialogIds.add(dialogs[currentIndex].id);
+    readDialogIds.add(current.id);
     saveProgress();
-
+    
     // 移到下一條
     currentIndex = (currentIndex + 1) % dialogs.length;
     updateUI();
@@ -457,6 +585,25 @@ function updateUI() {
     if (!dialogs || dialogs.length === 0) return;
     const current = dialogs[currentIndex];
     const bgChanged = current.bg !== prevState.bg;
+    const isFirstDialog = currentIndex === 0;
+    const isLastDialog = currentIndex === dialogs.length - 1;
+    
+    // 檢查是否需要執行 Fade In (第一句且標記了 fade_in)
+    if (isFirstDialog && current.fade_in && fadeState === 'none') {
+        startFadeIn(() => {
+            // Fade In 完成後才開始正常的 UI 更新流程
+            executeUIUpdate(current, bgChanged, isLastDialog);
+        });
+        return;
+    }
+    
+    // 正常流程
+    executeUIUpdate(current, bgChanged, isLastDialog);
+}
+
+function executeUIUpdate(current, bgChanged, isLastDialog) {
+    // 恢復對話框與控制區可見性 (淡入完成或一般推進時都應顯示)
+    document.getElementById('dialog-box').style.visibility = 'visible';
     
     if (bgChanged) gameContainer.classList.add('fade');
     
@@ -497,9 +644,11 @@ function updateSpeakerLabel(speaker) {
     const label = document.createElement('div');
     label.className = 'speaker-label';
     label.textContent = speaker;
-    label.style.setProperty('--speaker-color', `var(--color-${speaker}, var(--ui-accent))`);
-    label.style.background = `linear-gradient(135deg, var(--color-${speaker}, var(--ui-accent)) 0%, color-mix(in srgb, var(--color-${speaker}, var(--ui-accent)) 70%, black) 100%)`;
-    label.style.borderColor = `var(--color-${speaker}, var(--ui-accent))`;
+    
+    const colorVar = `var(--color-${speaker}, var(--ui-accent))`;
+    label.style.setProperty('--speaker-color', colorVar);
+    label.style.background = `linear-gradient(135deg, ${colorVar} 0%, color-mix(in srgb, ${colorVar} 70%, black) 100%)`;
+    label.style.borderColor = colorVar;
     
     // 旁白特殊處理
     if (speaker === '旁白' || speaker === '系統') {
@@ -528,12 +677,15 @@ function addToHistory(entry) {
 
 function renderHistory() {
     const list = document.getElementById('history-list');
-    list.innerHTML = history.map((item, index) => `
-        <div class="history-item" style="animation-delay: ${index * 0.03}s; border-left-color: var(--color-${item.speaker}, var(--ui-border-dim))">
-            <div class="history-speaker" style="color: var(--color-${item.speaker}, var(--ui-accent))">${item.speaker}</div>
+    list.innerHTML = history.map((item, index) => {
+        const delay = index * 0.03;
+        const borderColor = `var(--color-${item.speaker}, var(--ui-border-dim))`;
+        const speakerColor = `var(--color-${item.speaker}, var(--ui-accent))`;
+        return `<div class="history-item" style="animation-delay: ${delay}s; border-left-color: ${borderColor}">
+            <div class="history-speaker" style="color: ${speakerColor}">${item.speaker}</div>
             <div class="history-text">${escapeHtml(item.text)}</div>
-        </div>
-    `).join('');
+        </div>`;
+    }).join('');
 }
 
 function escapeHtml(text) {
@@ -542,7 +694,7 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// ===== 立繪更新 =====
+// ===== 立繪更新 (角色特效) =====
 function updateSprites(sprites) {
     spriteContainer.innerHTML = '';
     const posCoords = { 
@@ -579,6 +731,7 @@ function updateSprites(sprites) {
         img.alt = s.file;
         img.loading = 'lazy';
         
+        // 角色特效 (tremble, flash 等) - 套用在 img 上
         if (s.effect) {
             img.className = s.effect;
         }
@@ -648,7 +801,6 @@ function closeHistoryPanel() {
     historyPanel.classList.remove('open');
 }
 
-// ===== 對話紀錄 (Log) 置中介面 =====
 function openLogModal() {
     renderLog();
     logModal.classList.add('open');
@@ -669,12 +821,13 @@ function renderLog() {
     
     // history 是最新的在陣列最前面 (unshift)，還原為時間正序顯示
     const reversed = [...history].reverse();
-    body.innerHTML = reversed.map(item => `
-        <div class="log-item">
-            <div class="log-item-speaker" style="color: var(--color-${item.speaker}, var(--ui-accent))">${item.speaker}</div>
+    body.innerHTML = reversed.map(item => {
+        const speakerColor = `var(--color-${item.speaker}, var(--ui-accent))`;
+        return `<div class="log-item">
+            <div class="log-item-speaker" style="color: ${speakerColor}">${item.speaker}</div>
             <div class="log-item-text">${escapeHtml(item.text)}</div>
-        </div>
-    `).join('');
+        </div>`;
+    }).join('');
     
     // 自動捲動到底部 (最新對話)
     body.scrollTop = body.scrollHeight;
@@ -891,5 +1044,9 @@ window.__VN_DEV__ = {
     history,
     getSaves,
     autoPlay: () => autoPlay,
-    toggleAutoPlay
+    toggleAutoPlay,
+    fadeState: () => fadeState,
+    startFadeIn,
+    startFadeOut,
+    resetToMainMenu
 };

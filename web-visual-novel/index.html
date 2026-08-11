@@ -39,13 +39,19 @@
       </div>
 
       <!-- 自動播放指示器 -->
-      <div id="auto-indicator">
-          <div class="auto-icon" aria-hidden="true"></div>
-          <span>自動播放中</span>
-      </div>
-    </div>
+            <div id="auto-indicator">
+                <div class="auto-icon" aria-hidden="true"></div>
+                <span>自動播放中</span>
+            </div>
+          </div>
 
-    <!-- 設定選單 Modal -->
+          <!-- Fade 遮罩 (全螢幕黑色遮罩) -->
+          <div id="fade-overlay" aria-hidden="true"></div>
+
+          <!-- 返回主選單按鈕 (Fade Out 完成後顯示) -->
+          <button id="return-main-btn" aria-label="返回主選單">返回主選單</button>
+
+          <!-- 設定選單 Modal -->
     <div id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
         <div class="settings-panel">
             <h2 id="settings-title">遊戲設定</h2>
