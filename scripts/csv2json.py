@@ -31,15 +31,15 @@ def convert_csv_to_json():
                     sprites.append(sprite_obj)
             
             data.append({
-                            'id': int(row['id']),
-                            'speaker': row['speaker'],
-                            'text': row['text'],
-                            'bg': row['bg'],
-                            'bgm': row.get('bgm', ''),
-                            'fade_in': row.get('fade_in', '').lower() == 'true',
-                            'fade_out': row.get('fade_out', '').lower() == 'true',
-                            'sprites': sprites
-                        })
+                                        'id': int(row['id']),
+                                        'speaker': row['speaker'],
+                                        'text': row['text'],
+                                        'bg': row['bg'],
+                                        'bgm': row.get('bgm', ''),
+                                        'fade_in': (row.get('fade_in', '') or '').lower() == 'true',
+                                        'fade_out': (row.get('fade_out', '') or '').lower() == 'true',
+                                        'sprites': sprites
+                                    })
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
