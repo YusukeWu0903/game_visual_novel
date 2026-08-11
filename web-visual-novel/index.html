@@ -1,37 +1,153 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Visual Novel</title>
-    <style>
-      body { margin: 0; overflow: hidden; background: #222; font-family: sans-serif; }
-      #game-container { width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; cursor: pointer; }
-      #dialog-box { width: 80%; height: 20%; background: rgba(0, 0, 0, 0.7); color: white; padding: 20px; box-sizing: border-box; border-radius: 10px; margin-bottom: 50px; display: flex; flex-direction: column; }
-      #speaker { font-weight: bold; margin-bottom: 10px; color: #ffcc00; }
-    </style>
-  <link rel="stylesheet" href="/src/style.css"></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>慾之穹頂 - 視覺小說</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
   <body>
     <div id="game-container">
+      <!-- 開始畫面 -->
       <div id="start-screen">
           <h1>慾之穹頂</h1>
           <div class="btn-group">
             <button id="start-btn">開始新遊戲</button>
-            <button>讀取進度</button>
+            <button id="load-btn">讀取進度</button>
           </div>
       </div>
-      <div id="sprite-container"><img id="sprite" src="" style="display:none; height:100%;"/></div>
+
+      <!-- 角色立繪容器 -->
+      <div id="sprite-container"></div>
+
+      <!-- 對話框 -->
       <div id="dialog-box">
           <div id="controls-area">
-              <button class="speed-btn" data-speed="100">慢</button>
-              <button class="speed-btn active" data-speed="50">中</button>
-              <button class="speed-btn" data-speed="10">快</button>
-              <button id="fs-btn">全螢幕</button>
+              <button class="speed-btn" data-speed="100" title="慢速">慢</button>
+              <button class="speed-btn active" data-speed="50" title="中速">中</button>
+              <button class="speed-btn" data-speed="10" title="快速">快</button>
+              <button id="log-btn" title="對話紀錄" aria-label="對話紀錄">📜</button>
+              <button id="fs-btn" title="全螢幕">全螢幕</button>
+              <button id="settings-btn" title="設定" aria-label="設定">⚙</button>
           </div>
+          <!-- 角色名字標籤 (動態插入) -->
           <div id="speaker"></div>
           <div id="text"></div>
-          </div>
+      </div>
+
+      <!-- 自動播放指示器 -->
+      <div id="auto-indicator">
+          <div class="auto-icon" aria-hidden="true"></div>
+          <span>自動播放中</span>
+      </div>
     </div>
+
+    <!-- 設定選單 Modal -->
+    <div id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+        <div class="settings-panel">
+            <h2 id="settings-title">遊戲設定</h2>
+            
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span>主音量</span>
+                    <span class="setting-value" id="master-volume-value">80%</span>
+                </div>
+                <input type="range" class="setting-slider" id="master-volume" min="0" max="100" value="80" step="1">
+            </div>
+
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span>BGM 音量</span>
+                    <span class="setting-value" id="bgm-volume-value">70%</span>
+                </div>
+                <input type="range" class="setting-slider" id="bgm-volume" min="0" max="100" value="70" step="1">
+            </div>
+
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span>音效音量</span>
+                    <span class="setting-value" id="sfx-volume-value">80%</span>
+                </div>
+                <input type="range" class="setting-slider" id="sfx-volume" min="0" max="100" value="80" step="1">
+            </div>
+
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span>自動播放速度</span>
+                    <span class="setting-value" id="auto-speed-value">2.0x</span>
+                </div>
+                <input type="range" class="setting-slider" id="auto-speed" min="5" max="50" value="20" step="5">
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-toggle">
+                    <input type="checkbox" id="auto-advance" checked>
+                    <span class="toggle-track"></span>
+                    <span class="toggle-label">對話完成自動推進 (非自動播放時)</span>
+                </label>
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-toggle">
+                    <input type="checkbox" id="skip-read" checked>
+                    <span class="toggle-track"></span>
+                    <span class="toggle-label">跳過已讀對話 (Ctrl+點擊)</span>
+                </label>
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-toggle">
+                    <input type="checkbox" id="hide-ui" >
+                    <span class="toggle-track"></span>
+                    <span class="toggle-label">點擊隱藏 UI (長按顯示)</span>
+                </label>
+            </div>
+
+            <button class="settings-close" id="settings-close-btn">關閉設定</button>
+        </div>
+    </div>
+
+    <!-- 對話紀錄 (Log) 置中介面 -->
+    <div id="log-modal" role="dialog" aria-modal="true" aria-labelledby="log-title">
+        <div class="log-panel">
+            <div class="log-header">
+                <h3 id="log-title">對話紀錄</h3>
+                <button class="log-close" id="log-close-btn" aria-label="關閉對話紀錄">✕</button>
+            </div>
+            <div class="log-body" id="log-body">
+                <!-- 動態填入歷史紀錄 -->
+                <div class="log-empty">尚無對話紀錄</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 存檔/讀檔選單 Modal -->
+    <div id="save-load-modal" role="dialog" aria-modal="true" aria-labelledby="save-load-title">
+        <div class="save-load-panel">
+            <div class="save-load-header">
+                <h2 id="save-load-title">存檔 / 讀檔</h2>
+                <div class="save-load-tabs">
+                    <button class="tab-btn active" data-tab="save">存檔</button>
+                    <button class="tab-btn" data-tab="load">讀檔</button>
+                </div>
+            </div>
+            <div class="slots-grid" id="slots-grid"></div>
+            <button class="settings-close" id="save-load-close-btn" style="margin-top: 8px;">關閉</button>
+        </div>
+    </div>
+
+    <!-- 歷史記錄面板 -->
+    <div id="history-panel" role="region" aria-label="對話歷史">
+        <div class="history-header">
+            <h3>對話歷史</h3>
+            <button class="history-close" id="history-close-btn" aria-label="關閉歷史">×</button>
+        </div>
+        <div class="history-list" id="history-list"></div>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
