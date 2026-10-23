@@ -1,0 +1,112 @@
+{
+  "version": 4,
+  "assembly": "Complete casual PNG; common composite idle, no separate joints",
+  "blinkEnabled": false,
+  "pointerFollow": false,
+  "stanceBands": [
+    {
+      "y": 0,
+      "body": 6.091040001266006,
+      "torso": 1.0151733335443345,
+      "head": 0
+    },
+    {
+      "y": 315.722893364245,
+      "body": 6.091040001266006,
+      "torso": 1.0151733335443345,
+      "head": 0
+    },
+    {
+      "y": 394.39882671393093,
+      "body": 5.075866667721672,
+      "torso": 1.0151733335443345,
+      "head": 0
+    },
+    {
+      "y": 536.5230934101378,
+      "body": 3.553106667405171,
+      "torso": 0.5075866667721672,
+      "head": 0
+    },
+    {
+      "y": 676.1094267724837,
+      "body": 2.030346667088669,
+      "torso": 0,
+      "head": 0
+    },
+    {
+      "y": 1080,
+      "body": 0,
+      "torso": 0,
+      "head": 0
+    },
+    {
+      "y": 1280,
+      "body": 0,
+      "torso": 0,
+      "head": 0
+    }
+  ],
+  "chest": {
+    "x": 636.980470084622,
+    "y": 422.3160933864001,
+    "radiusX": 80.19869335000243,
+    "radiusY": 55.83453334493839,
+    "maxPixels": 1.5227600003165016
+  },
+  "fixedContactFromY": 1080,
+  "calibration": {
+    "scale": 1.9701069107255627,
+    "translation": [
+      -614.9196261109312,
+      -322.00785409116895
+    ]
+  },
+  "landmarks": {
+    "oldEyeCentres": [
+      [
+        595.9300134589502,
+        213.51547779273216
+      ],
+      [
+        696.1509186351706,
+        206.30971128608923
+      ]
+    ],
+    "newEyeCentres": [
+      [
+        614.6111325115562,
+        273.2604969183359
+      ],
+      [
+        665.4819277108434,
+        269.1265060240964
+      ]
+    ],
+    "oldHeadTopY": 7,
+    "newHeadTopY": 167
+  },
+  "coordinateSpace": "1280x1280 source pixels",
+  "referenceMetrics": "Legacy virtual standing reference retained to preserve face scale and head top; not measured sole height",
+  "roomStage": {
+    "portraitHeightPercent": 130.625,
+    "standingLineYPercent": 142.625
+  },
+  "sourceGraphicId": "Graphic1124",
+  "rasterSize": {
+    "width": 790,
+    "height": 1843
+  },
+  "sourceMapping": {
+    "scaleX": 1.2337830455994199,
+    "scaleY": 1.2337830455994199,
+    "offsetX": -276.0374066805437,
+    "offsetY": -29.311910352589734
+  },
+  "qualityNote": "Sample accepted 1228x1843 original directly. Keep logical1280 rig and360x840 layout metrics; native raster790x1843 replaces rejected360x840 intermediate.",
+  "registration": "Uniform eye-landmark registration to accepted native Maru master; separate physical limb matching not claimed",
+  "reviewStatus": "User authorized outfit integration with idle and no blinking; PNG retains source halo",
+  "nativeSourceSha256": "ba5597a304e98d1e0153d1a0f6464a20ca0673d96a9e24b2dbac74c01b6701df",
+  "depthGraphicId": "Graphic1127",
+  "depthUse": "Shared-composite bounded breathing attenuation only. 15 authored part depth references retained externally; no independent reconstructed limbs."
+}

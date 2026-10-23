@@ -1,0 +1,21 @@
+import { getRuntimeContent } from './runtimeContent.js';
+export const AUDIO_ASSETS = getRuntimeContent('audioAssets', () => [
+    {
+        "id": "Audio0001",
+        "assetLabel": "試播用溫暖氛圍音樂",
+        "audioType": "bgm",
+        "assetPath": "audio/dialogue-demo/demo_bgm.wav"
+    },
+    {
+        "id": "Audio0002",
+        "assetLabel": "試播用提示鈴音",
+        "audioType": "sfx",
+        "assetPath": "audio/dialogue-demo/demo_chime.wav"
+    },
+    {
+        "id": "Audio0003",
+        "assetLabel": "試播用雨聲循環",
+        "audioType": "sfx",
+        "assetPath": "audio/dialogue-demo/demo_rain_loop.wav"
+    }
+]);

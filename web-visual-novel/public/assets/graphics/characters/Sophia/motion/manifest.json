@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "profile": "layered-idle-v1",
+  "nativeSize": [
+    1280,
+    1280
+  ],
+  "crop": {
+    "x": 365,
+    "y": 0,
+    "width": 550,
+    "height": 1280
+  },
+  "rigGraphicId": "Graphic1013",
+  "neutralGraphicId": "Graphic1014",
+  "layers": [
+    {
+      "name": "backhair",
+      "graphicId": "Graphic1015",
+      "depthGraphicId": "Graphic1016"
+    },
+    {
+      "name": "legwear",
+      "graphicId": "Graphic1017",
+      "depthGraphicId": "Graphic1018"
+    },
+    {
+      "name": "footwear",
+      "graphicId": "Graphic1019",
+      "depthGraphicId": "Graphic1020"
+    },
+    {
+      "name": "earwear",
+      "graphicId": "Graphic1021",
+      "depthGraphicId": "Graphic1022"
+    },
+    {
+      "name": "bottomwear",
+      "graphicId": "Graphic1023",
+      "depthGraphicId": "Graphic1024"
+    },
+    {
+      "name": "neck",
+      "graphicId": "Graphic1025",
+      "depthGraphicId": "Graphic1026"
+    },
+    {
+      "name": "handwear",
+      "graphicId": "Graphic1027",
+      "depthGraphicId": "Graphic1028"
+    },
+    {
+      "name": "topwear",
+      "graphicId": "Graphic1029",
+      "depthGraphicId": "Graphic1030"
+    },
+    {
+      "name": "ears",
+      "graphicId": "Graphic1031",
+      "depthGraphicId": "Graphic1032"
+    },
+    {
+      "name": "face",
+      "graphicId": "Graphic1033",
+      "depthGraphicId": "Graphic1034"
+    },
+    {
+      "name": "eyebrow",
+      "graphicId": "Graphic1035",
+      "depthGraphicId": "Graphic1036"
+    },
+    {
+      "name": "nose",
+      "graphicId": "Graphic1037",
+      "depthGraphicId": "Graphic1038"
+    },
+    {
+      "name": "mouth",
+      "graphicId": "Graphic1039",
+      "depthGraphicId": "Graphic1040"
+    },
+    {
+      "name": "eyewhite",
+      "graphicId": "Graphic1041",
+      "depthGraphicId": "Graphic1042"
+    },
+    {
+      "name": "irides",
+      "graphicId": "Graphic1043",
+      "depthGraphicId": "Graphic1044"
+    },
+    {
+      "name": "eyelash",
+      "graphicId": "Graphic1045",
+      "depthGraphicId": "Graphic1046"
+    },
+    {
+      "name": "fronthair",
+      "graphicId": "Graphic1047",
+      "depthGraphicId": "Graphic1048"
+    }
+  ],
+  "eyeManifestGraphicId": "Graphic1064",
+  "sourceRelease": "motion_v12-eyes_v4-preview"
+}

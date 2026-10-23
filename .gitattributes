@@ -1,0 +1,2 @@
+# Preserve hash-addressed imported rig and assembly bytes through Git checkouts.
+web-visual-novel/public/companions/** -text

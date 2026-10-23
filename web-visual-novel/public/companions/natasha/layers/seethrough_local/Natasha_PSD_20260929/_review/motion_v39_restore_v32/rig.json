@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "task": "Natasha_PSD_20260929",
+  "candidate": "motion_v39_restore_v32",
+  "characterName": "Natasha",
+  "candidateTitle": "Natasha · 還原無手臂／肩膀位移版本",
+  "name": "Natasha restored motion_v32 behavior without arm or shoulder displacement",
+  "nonProduction": true,
+  "reviewStatus": "pending",
+  "coordinateSpace": "canvas-pixels",
+  "canvas": [
+    1280,
+    1280
+  ],
+  "layerCount": 17,
+  "sourceSha256": "9E78B78A824E7F2331301CA48BEC75DE04B3F0AEA62D1FE8C95A93E713DAC04B",
+  "assembly": "_review/assembly_shadow_v22/assembly.json",
+  "assemblySha256": "1BC78029240E9F0DB7B8121BC418B132F0FA2B868945500CB823F78559302340",
+  "rollbackManifest": "_review/motion_v32/rig.json",
+  "staticLayers": [],
+  "grounding": {
+    "mode": "shared-stance-field",
+    "groundY": 1280,
+    "stripHeight": 4,
+    "bands": [
+      {
+        "y": 0,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 280,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 490,
+        "body": 8,
+        "torso": 2,
+        "head": 0
+      },
+      {
+        "y": 740,
+        "body": 5,
+        "torso": 1,
+        "head": 0
+      },
+      {
+        "y": 1000,
+        "body": 2,
+        "torso": 0,
+        "head": 0
+      },
+      {
+        "y": 1280,
+        "body": 0,
+        "torso": 0,
+        "head": 0
+      }
+    ]
+  },
+  "pointerFollow": {
+    "mode": "smoothed-additive",
+    "centerX": 640,
+    "radius": 500,
+    "responseRate": 6,
+    "body": 0.4,
+    "torso": 0.05,
+    "head": 0.05
+  },
+  "nodes": [
+    {
+      "id": "root",
+      "parent": null,
+      "pivot": [
+        0,
+        0
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "body",
+      "parent": "root",
+      "pivot": [
+        672,
+        1280
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "torso",
+      "parent": "body",
+      "pivot": [
+        640,
+        725
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "head",
+      "parent": "torso",
+      "pivot": [
+        680,
+        275
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "hair",
+      "parent": "head",
+      "pivot": [
+        720,
+        290
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    }
+  ],
+  "bindings": {
+    "legwear": "body",
+    "backhair": "hair",
+    "topwear": "torso",
+    "handwear": "torso",
+    "neck": "torso",
+    "ears": "head",
+    "face": "head",
+    "mouth": "head",
+    "eyebrow": "head",
+    "eyewhite": "head",
+    "irides": "head",
+    "eyelash": "head",
+    "fronthair": "hair",
+    "eyewear": "head",
+    "headwear": "head",
+    "hand_back": "torso",
+    "hem_shadow": "torso"
+  },
+  "bustField": {
+    "mode": "composite-chest-field",
+    "label": "肩背呼吸",
+    "centerX": 674,
+    "centerY": 445,
+    "radiusX": 160,
+    "radiusY": 120,
+    "maxPixels": 2,
+    "tileWidth": 16,
+    "tileHeight": 3,
+    "defaultStrength": 55
+  },
+  "limits": [
+    "Restoration candidate copied from motion_v32; armSway and shoulder displacement are absent.",
+    "Preserves motion_v32 skirt, hem shadow, underbust/back ruffle, stance, body sink, blink and 17-layer order.",
+    "No source PNG/PSD or production defaults changed; non-production review candidate.",
+    "Rollback/reference remains _review/motion_v32/rig.json; rejected arm-motion experiments remain preserved in motion_v34 through motion_v38."
+  ],
+  "skirtSway": {
+    "mode": "anchored-horizontal-lag",
+    "owner": "topwear",
+    "anchorY": 690,
+    "hemY": 1080,
+    "maxPixels": 9,
+    "gainPixels": 18,
+    "frequency": 5,
+    "damping": 0.75,
+    "stripHeight": 1,
+    "followers": [
+      "hem_shadow"
+    ],
+    "pinnedX": {
+      "leftFixed": 555,
+      "leftFull": 655,
+      "rightFull": 800,
+      "rightFixed": 900,
+      "rightPin": {
+        "rootFixed": 850,
+        "rootY": 870,
+        "freeY": 1040
+      }
+    },
+    "responseSign": -1,
+    "freeBands": [
+      {
+        "name": "left_tie",
+        "left": 435,
+        "leftFull": 450,
+        "rightFull": 505,
+        "right": 535,
+        "top": 865,
+        "fullY": 985,
+        "strength": 0.7
+      },
+      {
+        "name": "right_tie",
+        "left": 845,
+        "leftFull": 860,
+        "rightFull": 895,
+        "right": 915,
+        "top": 870,
+        "fullY": 1000,
+        "strength": 0.7
+      },
+      {
+        "name": "underbust_back_ruffle",
+        "left": 435,
+        "leftFull": 465,
+        "rightFull": 775,
+        "right": 810,
+        "top": 525,
+        "fullY": 645,
+        "bottomFull": 670,
+        "bottom": 735,
+        "strength": 0.55
+      }
+    ]
+  },
+  "bodySink": {
+    "maxPixels": 3,
+    "triggerStart": 0.4
+  },
+  "eyeRig": {
+    "manifest": "_review/eyes_v7/manifest.json",
+    "manifestSha256": "42414840CF8B43F0FD049D24BEA5EABFE1A4DCFBB363F3F9D01DD88878C96695",
+    "gazeResponseRate": 9,
+    "gazeMode": "shared-unit-circle",
+    "gazeEnabled": false,
+    "autoBlinkIntervalSeconds": 4.6,
+    "blinkMode": "layer-crossfade",
+    "semanticLayers": {
+      "white": "eyewhite",
+      "iris": "irides",
+      "lash": "eyelash"
+    },
+    "note": "閉眼素材來自 Natasha_casual_eyeclose.png；遮罩直接依實際眼白／虹膜／睫毛像素範圍，向外只擴 1px 以填滿閉眼眼窩，眼鏡與髮絲依原層序覆蓋。"
+  }
+}

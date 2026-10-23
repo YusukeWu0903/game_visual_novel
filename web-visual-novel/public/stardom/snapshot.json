@@ -1,0 +1,914 @@
+{
+  "source": "D:\\Project\\game_dual-realm",
+  "importedOn": "2026-10-23",
+  "modules": 36,
+  "graphicCount": 76,
+  "files": [
+    {
+      "source": "dist/view/EventDialoguePlayback.js",
+      "destination": "web-visual-novel/public/stardom/runtime/view/EventDialoguePlayback.js",
+      "bytes": 35290,
+      "sha256": "b92c7a7ab0c7363e370165083889468e4b05de044c2a4bdecaa94216322d3a6f"
+    },
+    {
+      "source": "src/view/EventDialoguePlayback.ts",
+      "destination": "vendor/stardom/source/view/EventDialoguePlayback.ts",
+      "bytes": 30378,
+      "sha256": "a24ab6ff4ef90bd481b82d3a0f2428db7cf7d22fcf9a064e521c79fee7951f1e"
+    },
+    {
+      "source": "dist/core/localization.js",
+      "destination": "web-visual-novel/public/stardom/runtime/core/localization.js",
+      "bytes": 728,
+      "sha256": "38f7418f705046f63dbe03b4a123318232786cd0d3b1b7364d958230c85157ff"
+    },
+    {
+      "source": "src/core/localization.ts",
+      "destination": "vendor/stardom/source/core/localization.ts",
+      "bytes": 1044,
+      "sha256": "e23cd1362bf175ba02117e93386f3d52c5190454abcaaa3d7c3e4eb6aff342f4"
+    },
+    {
+      "source": "dist/data/localizationData.js",
+      "destination": "web-visual-novel/public/stardom/runtime/data/localizationData.js",
+      "bytes": 462407,
+      "sha256": "90784eab669b9d8629b255c5c459d8b1c37934b120b2a7872800e0d4a6610971"
+    },
+    {
+      "source": "src/data/localizationData.ts",
+      "destination": "vendor/stardom/source/data/localizationData.ts",
+      "bytes": 414896,
+      "sha256": "7a64db8bab2cba705d244c788ff4538e230bb4ec25e76fc60ae1314083b30cfa"
+    },
+    {
+      "source": "dist/data/charactersData.js",
+      "destination": "web-visual-novel/public/stardom/runtime/data/charactersData.js",
+      "bytes": 4536,
+      "sha256": "c6837be6c4946e0697db0cdd1eab14f18b649d66fcc8a3f81523e3314a68ac8c"
+    },
+    {
+      "source": "src/data/charactersData.ts",
+      "destination": "vendor/stardom/source/data/charactersData.ts",
+      "bytes": 4682,
+      "sha256": "b4bba22d99e99fbd38edb7fd5fcf868b673344bdd0e3effe7c6119d1449248a2"
+    },
+    {
+      "source": "dist/data/runtimeContent.js",
+      "destination": "web-visual-novel/public/stardom/runtime/data/runtimeContent.js",
+      "bytes": 419,
+      "sha256": "7d4f02b032054cdc599cc6df0d306ea69790f571e1d230cdb590a4f737e09101"
+    },
+    {
+      "source": "src/data/runtimeContent.ts",
+      "destination": "vendor/stardom/source/data/runtimeContent.ts",
+      "bytes": 493,
+      "sha256": "c5bf922821dca6d3377f26365eac0d5a1498ea37ca2888257fac913392daa7e7"
+    },
+    {
+      "source": "dist/view/MaruIdleMotion.js",
+      "destination": "web-visual-novel/public/stardom/runtime/view/MaruIdleMotion.js",
+      "bytes": 19582,
+      "sha256": "e3f21a1d916e91c699c01fa91f5ffa6623136e5795176375aab1e5e5fe509d83"
+    },
+    {
+      "source": "src/view/MaruIdleMotion.ts",
+      "destination": "vendor/stardom/source/view/MaruIdleMotion.ts",
+      "bytes": 19895,
+      "sha256": "e16179b128aefa5341b3f854fa5f08b32f0a87d0154db20c3179e228b4dea42f"
+    },
+    {
+      "source": "dist/core/GraphicIds.js",
+      "destination": "web-visual-novel/public/stardom/runtime/core/GraphicIds.js",
+      "bytes": 272,
+      "sha256": "a0070765f6c9619e335ff5709c5dba550c852fc76f5ddc19b77d96d7b00c203a"
+    },
+    {
+      "source": "src/core/GraphicIds.ts",
+      "destination": "vendor/stardom/source/core/GraphicIds.ts",
+      "bytes": 273,
+      "sha256": "29053c35d00eb9418c40bcad6ef7e3c6331b6b5da58490f9698163029e28413b"
+    },
+    {
+      "source": "dist/platform/browser/GraphicUrls.js",
+      "destination": "web-visual-novel/public/stardom/runtime/platform/browser/GraphicUrls.js",
+      "bytes": 274,
+      "sha256": "07fac18bf8e7635fef85b1f29102177496ef0ba5c120bf43b17b882014a98708"
+    },
+    {
+      "source": "src/platform/browser/GraphicUrls.ts",
+      "destination": "vendor/stardom/source/platform/browser/GraphicUrls.ts",
+      "bytes": 313,
+      "sha256": "107ed1bbf1b3c9ac19cb2ab09fe721c272cc424f25d24326a466197ee4ed118d"
+    },
+    {
+      "source": "dist/data/graphicsData.js",
+      "destination": "web-visual-novel/public/stardom/runtime/data/graphicsData.js",
+      "bytes": 23744,
+      "sha256": "5e48cfe90535dc45da42d683702d63a2df852cef063ff36a729e2970b9502d0a"
+    },
+    {
+      "source": "src/data/graphicsData.ts",
+      "destination": "vendor/stardom/source/data/graphicsData.ts",
+      "bytes": 21576,
+      "sha256": "f6b697b7bcca47463a7e71641622b165388b179f0a73fa79f2f9227100cfebd5"
+    },
+    {
+      "source": "dist/platform/browser/BrowserAnimationClock.js",
+      "destination": "web-visual-novel/public/stardom/runtime/platform/browser/BrowserAnimationClock.js",
+      "bytes": 433,
+      "sha256": "94ae169884e1758453c50683586db2fbb92d86d869642dc6c009f7e356dc9071"
+    },
+    {
+      "source": "src/platform/browser/BrowserAnimationClock.ts",
+      "destination": "vendor/stardom/source/platform/browser/BrowserAnimationClock.ts",
+      "bytes": 515,
+      "sha256": "91cbceea8f10757b5a884d276f7d871910fe2e0161f6d1f304243199704ee1f7"
+    },
+    {
+      "source": "dist/platform/browser/BrowserGraphicAssets.js",
+      "destination": "web-visual-novel/public/stardom/runtime/platform/browser/BrowserGraphicAssets.js",
+      "bytes": 524,
+      "sha256": "e3fb5fe14d8dc3c6eb828b06024ac3e45f2982b52962ec02f3b2683408257b6b"
+    },
+    {
+      "source": "src/platform/browser/BrowserGraphicAssets.ts",
+      "destination": "vendor/stardom/source/platform/browser/BrowserGraphicAssets.ts",
+      "bytes": 586,
+      "sha256": "14fd36a3dcfd8b884176d70c0b620f76c1b1093d07f36bf05178ed93883de7c4"
+    },
+    {
+      "source": "dist/platform/browser/PresentationVisibility.js",
+      "destination": "web-visual-novel/public/stardom/runtime/platform/browser/PresentationVisibility.js",
+      "bytes": 302,
+      "sha256": "b7cb4d159a9489d29d08a83a09d498b56ece8032d93dd106e29c12cba57917ae"
+    },
+    {
+      "source": "src/platform/browser/PresentationVisibility.ts",
+      "destination": "vendor/stardom/source/platform/browser/PresentationVisibility.ts",
+      "bytes": 307,
+      "sha256": "99049b6d9a2b8f5c7927011250a9d6c252450a15f6f4bd21746fad47f7716e03"
+    },
+    {
+      "source": "dist/platform/browser/LayeredPortraitMotion.js",
+      "destination": "web-visual-novel/public/stardom/runtime/platform/browser/LayeredPortraitMotion.js",
+      "bytes": 9204,
+      "sha256": "b5b296d7bcff57feae57b6bd444e47c563d825c15f738964db557332fbf49361"
+    },
+    {
+      "source": "src/platform/browser/LayeredPortraitMotion.ts",
+      "destination": "vendor/stardom/source/platform/browser/LayeredPortraitMotion.ts",
+      "bytes": 9140,
+      "sha256": "7c3e06dc44290af0357cdb0de0c8711d64f15c3ce56e92bd30ec6d9285aad2d5"
+    },
+    {
+      "source": "dist/platform/browser/RegisteredPortraitBlink.js",
+      "destination": "web-visual-novel/public/stardom/runtime/platform/browser/RegisteredPortraitBlink.js",
+      "bytes": 1902,
+      "sha256": "7ff8271313e50e72a59c16275d30898e652db94c24acb20207508d858e65ff4c"
+    },
+    {
+      "source": "src/platform/browser/RegisteredPortraitBlink.ts",
+      "destination": "vendor/stardom/source/platform/browser/RegisteredPortraitBlink.ts",
+      "bytes": 1952,
+      "sha256": "e9407f355b84f43e6a3dcde0e6a714f5881bf039f4c0aa7b0ac0551435886972"
+    },
+    {
+      "source": "dist/core/DialogueFlowSession.js",
+      "destination": "web-visual-novel/public/stardom/runtime/core/DialogueFlowSession.js",
+      "bytes": 3590,
+      "sha256": "d7a0515129473b693c8cf11b8638ff93de815fa92f2c10120780a6ffd68cea02"
+    },
+    {
+      "source": "src/core/DialogueFlowSession.ts",
+      "destination": "vendor/stardom/source/core/DialogueFlowSession.ts",
+      "bytes": 4424,
+      "sha256": "8525d20bf08974f89e9963b7e3a0e63370927ce6406d28ca51e6c314f4fcd369"
+    },
+    {
+      "source": "dist/core/GameDialogue.js",
+      "destination": "web-visual-novel/public/stardom/runtime/core/GameDialogue.js",
+      "bytes": 1780,
+      "sha256": "6db4170542afca302e16316187a4d3e568b801b75ac88eaf66ffc59d6deacbb5"
+    },
+    {
+      "source": "src/core/GameDialogue.ts",
+      "destination": "vendor/stardom/source/core/GameDialogue.ts",
+      "bytes": 1985,
+      "sha256": "777fc6abbbca6ba9af20c306af06ed5b9930975c31a8ea057e004a0381576a42"
+    },
+    {
+      "source": "dist/core/DialogueStage.js",
+      "destination": "web-visual-novel/public/stardom/runtime/core/DialogueStage.js",
+      "bytes": 2432,
+      "sha256": "6f68ed389997ff7260765f67e4b9bd6aa5c9325adfc0555a381074802775d5bd"
+    },
+    {
+      "source": "src/core/DialogueStage.ts",
+      "destination": "vendor/stardom/source/core/DialogueStage.ts",
+      "bytes": 3251,
+      "sha256": "373ac2e42a915ed88bf2733593ee8b53db8003fe555f8c3c2abb815e08ee7d1f"
+    },
+    {
+      "source": "dist/platform/browser/PortraitGeometry.js",
+      "destination": "web-visual-novel/public/stardom/runtime/platform/browser/PortraitGeometry.js",
+      "bytes": 757,
+      "sha256": "42ad31fff35ce69f5ecb9b826f8cb4a43260e53c6d54160afa94a6b3a65e4c81"
+    },
+    {
+      "source": "src/platform/browser/PortraitGeometry.ts",
+      "destination": "vendor/stardom/source/platform/browser/PortraitGeometry.ts",
+      "bytes": 873,
+      "sha256": "8bfa62e8fd94cc17f76f07c63d88de074e905af9bf8a9cd5322f76078712ae25"
+    },
+    {
+      "source": "dist/data/scenesData.js",
+      "destination": "web-visual-novel/public/stardom/runtime/data/scenesData.js",
+      "bytes": 8357,
+      "sha256": "4274f6285fd760119bf977abdd3a3f7754d1e3373edaf42ffd4894c3fa1f7592"
+    },
+    {
+      "source": "src/data/scenesData.ts",
+      "destination": "vendor/stardom/source/data/scenesData.ts",
+      "bytes": 7770,
+      "sha256": "c79169af40c49f6a88306c69ec3e304bc8e367077ceb96570568a0c140895073"
+    },
+    {
+      "source": "dist/platform/browser/GameViewport.js",
+      "destination": "web-visual-novel/public/stardom/runtime/platform/browser/GameViewport.js",
+      "bytes": 1769,
+      "sha256": "2f88984d8835ce001a5e7ee9fae3a96164ba304ff956dd4fe42516ef56166a21"
+    },
+    {
+      "source": "src/platform/browser/GameViewport.ts",
+      "destination": "vendor/stardom/source/platform/browser/GameViewport.ts",
+      "bytes": 1733,
+      "sha256": "4ac7f2a175214efb523f18560d47e75240f837c11587d6c4d6958baa9dada17e"
+    },
+    {
+      "source": "dist/core/GameViewport.js",
+      "destination": "web-visual-novel/public/stardom/runtime/core/GameViewport.js",
+      "bytes": 802,
+      "sha256": "9c66e1a884882729f9e937b099cafe91f353aad7602e2071602bb9a4ed05a10d"
+    },
+    {
+      "source": "src/core/GameViewport.ts",
+      "destination": "vendor/stardom/source/core/GameViewport.ts",
+      "bytes": 818,
+      "sha256": "4c1d8160383ac350ca60509544628febaf0c17b0623b31656be211dc6ae2f0e9"
+    },
+    {
+      "source": "dist/core/DialogueVisualState.js",
+      "destination": "web-visual-novel/public/stardom/runtime/core/DialogueVisualState.js",
+      "bytes": 1151,
+      "sha256": "b68966dedfee584914cda635f0448f344fbae6b040b64cec3b9c62570d790fb1"
+    },
+    {
+      "source": "src/core/DialogueVisualState.ts",
+      "destination": "vendor/stardom/source/core/DialogueVisualState.ts",
+      "bytes": 1415,
+      "sha256": "6562464e4c450b51918c3387018be5e13d62ebe808eeaeab1510f491e8cd4810"
+    },
+    {
+      "source": "dist/platform/browser/CharacterAppearance.js",
+      "destination": "web-visual-novel/public/stardom/runtime/platform/browser/CharacterAppearance.js",
+      "bytes": 2200,
+      "sha256": "41980182c75c51ec34e2ed72b2705bc7717112ec8cf6c12f29a447af14dace3d"
+    },
+    {
+      "source": "src/platform/browser/CharacterAppearance.ts",
+      "destination": "vendor/stardom/source/platform/browser/CharacterAppearance.ts",
+      "bytes": 2164,
+      "sha256": "a57fad9a33db0fd616cf3948c48eccdc6006914a1b707d21fad7122608613f63"
+    },
+    {
+      "source": "dist/data/portraitExpressionsData.js",
+      "destination": "web-visual-novel/public/stardom/runtime/data/portraitExpressionsData.js",
+      "bytes": 628,
+      "sha256": "671b5f7ab67054d6f7ffbb1e9bd8e29ff75d592e57b7bec8c5a73212521a863e"
+    },
+    {
+      "source": "src/data/portraitExpressionsData.ts",
+      "destination": "vendor/stardom/source/data/portraitExpressionsData.ts",
+      "bytes": 725,
+      "sha256": "ea7675d5b71346bc02cf58272fc1d8d9b4d492f73f36f62295656400c7b075cc"
+    },
+    {
+      "source": "dist/core/PortraitExpressions.js",
+      "destination": "web-visual-novel/public/stardom/runtime/core/PortraitExpressions.js",
+      "bytes": 569,
+      "sha256": "1abdeacef57005a823b23cfa9275362f0de7c6df5f5e5a4924494bd7b2d3b01b"
+    },
+    {
+      "source": "src/core/PortraitExpressions.ts",
+      "destination": "vendor/stardom/source/core/PortraitExpressions.ts",
+      "bytes": 1049,
+      "sha256": "574203d7677aab86ebde60511ff3ffe1db783a5568e704f0c7385e54f58aec1a"
+    },
+    {
+      "source": "dist/core/DialogueReading.js",
+      "destination": "web-visual-novel/public/stardom/runtime/core/DialogueReading.js",
+      "bytes": 713,
+      "sha256": "ac095c32bf44a16f0a425de4d14453c648efd2a6f895a37d2a2fa4396ebaa9c4"
+    },
+    {
+      "source": "src/core/DialogueReading.ts",
+      "destination": "vendor/stardom/source/core/DialogueReading.ts",
+      "bytes": 935,
+      "sha256": "9a47dcaafab1dbb7a1f11c54244deb2d2c0511240953608daa127b4fd6f5e266"
+    },
+    {
+      "source": "dist/view/DialogueTools.js",
+      "destination": "web-visual-novel/public/stardom/runtime/view/DialogueTools.js",
+      "bytes": 5534,
+      "sha256": "e3e0ff01112ff68ca544d8dd13e0f916eb66d096bf398279e4d4877ef8193f9c"
+    },
+    {
+      "source": "src/view/DialogueTools.ts",
+      "destination": "vendor/stardom/source/view/DialogueTools.ts",
+      "bytes": 5001,
+      "sha256": "56e67ac9d5f3a98ab38416c3c2d8990ec942f51451ac9caab1c0335133479efa"
+    },
+    {
+      "source": "dist/view/ColorText.js",
+      "destination": "web-visual-novel/public/stardom/runtime/view/ColorText.js",
+      "bytes": 1213,
+      "sha256": "824801940863dae7b48e99a28a7411e323cc22b10ae57e22c1bf3c0461abd4a6"
+    },
+    {
+      "source": "src/view/ColorText.ts",
+      "destination": "vendor/stardom/source/view/ColorText.ts",
+      "bytes": 1324,
+      "sha256": "b43d71bff00e416c43b2ae79cfd1bb53d66f66c801dbf7e0c895fecf564fd568"
+    },
+    {
+      "source": "dist/core/ColorText.js",
+      "destination": "web-visual-novel/public/stardom/runtime/core/ColorText.js",
+      "bytes": 1869,
+      "sha256": "5eaa08ab8411c9254183883f751be97694cb5be101591939c8350815f9d5a438"
+    },
+    {
+      "source": "src/core/ColorText.ts",
+      "destination": "vendor/stardom/source/core/ColorText.ts",
+      "bytes": 1968,
+      "sha256": "9b8074b43106442feec6b721362f2845d625fea6cd4020718e798e15140dc04e"
+    },
+    {
+      "source": "dist/platform/browser/DialogueAudio.js",
+      "destination": "web-visual-novel/public/stardom/runtime/platform/browser/DialogueAudio.js",
+      "bytes": 6778,
+      "sha256": "4af73fac7218dfdb13eb1f03ae94faf60dd3bbf5a2540c8db3ab860a6c8a2812"
+    },
+    {
+      "source": "src/platform/browser/DialogueAudio.ts",
+      "destination": "vendor/stardom/source/platform/browser/DialogueAudio.ts",
+      "bytes": 6992,
+      "sha256": "f05b94ede1245ddab2c467c895bf5719debf724c0ebcd7f033fc2df3d0d8a569"
+    },
+    {
+      "source": "dist/data/audioData.js",
+      "destination": "web-visual-novel/public/stardom/runtime/data/audioData.js",
+      "bytes": 656,
+      "sha256": "8c6b614be1461f51213a385052347d68d4a91f8d630ccf6fcf348b5f5921da14"
+    },
+    {
+      "source": "src/data/audioData.ts",
+      "destination": "vendor/stardom/source/data/audioData.ts",
+      "bytes": 727,
+      "sha256": "a873951645e4669e02dedc8e44be992e9b20528fe38bcbb2f80e1c3e7b9c3479"
+    },
+    {
+      "source": "dist/data/dialogueData.js",
+      "destination": "web-visual-novel/public/stardom/runtime/data/dialogueData.js",
+      "bytes": 86057,
+      "sha256": "b28ffd0cc434bad27a66fb47e928d7f3460bb749efc22c1d2c5371eaf4447536"
+    },
+    {
+      "source": "src/data/dialogueData.ts",
+      "destination": "vendor/stardom/source/data/dialogueData.ts",
+      "bytes": 76708,
+      "sha256": "f7ad14de2054b8f75f51ef2303c763a2b416dacd65420d1c407d3a96aa9b032e"
+    },
+    {
+      "source": "dist/data/dialogueOptionsData.js",
+      "destination": "web-visual-novel/public/stardom/runtime/data/dialogueOptionsData.js",
+      "bytes": 792,
+      "sha256": "f2646746ee9ef0acf0b34138c9e67ad6b1ce71e0e770c7b49a041b48c7e358f5"
+    },
+    {
+      "source": "src/data/dialogueOptionsData.ts",
+      "destination": "vendor/stardom/source/data/dialogueOptionsData.ts",
+      "bytes": 883,
+      "sha256": "a7b1a5a2e5a50eaebdc22a9f4c25e1e7a437a8a15b60710834ef0c55f4ef6023"
+    },
+    {
+      "source": "dist/data/dialogueRewardsData.js",
+      "destination": "web-visual-novel/public/stardom/runtime/data/dialogueRewardsData.js",
+      "bytes": 1088,
+      "sha256": "1a32bfcd6f67f2f61e53351c3bfe06d0c8b875751f4584459e9c377279e570b9"
+    },
+    {
+      "source": "src/data/dialogueRewardsData.ts",
+      "destination": "vendor/stardom/source/data/dialogueRewardsData.ts",
+      "bytes": 1214,
+      "sha256": "2244f05cf1bf6aaa764d84cd0441a38c9dd3513f8834ae972f504b0624a300d9"
+    },
+    {
+      "source": "dist/data/appearancesData.js",
+      "destination": "web-visual-novel/public/stardom/runtime/data/appearancesData.js",
+      "bytes": 681,
+      "sha256": "06c9ab0d5cb3d11563ca216d0c515570a62fc906d19ce34044d5a76afa16dc31"
+    },
+    {
+      "source": "src/data/appearancesData.ts",
+      "destination": "vendor/stardom/source/data/appearancesData.ts",
+      "bytes": 697,
+      "sha256": "3795bfd581e934a6768c27437188d2d98d479c1d2bc873770dc453c89553edc1"
+    },
+    {
+      "source": "dist/core/Wardrobe.js",
+      "destination": "web-visual-novel/public/stardom/runtime/core/Wardrobe.js",
+      "bytes": 830,
+      "sha256": "08cea86b1bbbba0f6d0cb7949f98bee2bf01260894d235b6d2163651b5f4fdee"
+    },
+    {
+      "source": "src/core/Wardrobe.ts",
+      "destination": "vendor/stardom/source/core/Wardrobe.ts",
+      "bytes": 1466,
+      "sha256": "c60a4f4fa24937116ae08365f8320686829b51c217424d365562e3b51a6575e4"
+    },
+    {
+      "source": "assets/graphics/characters/maru/motion/neutral.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/motion/neutral.png",
+      "bytes": 320168,
+      "sha256": "76acae9a7067df5c6eabe824b970e335c2a1625f4049f92eefeeebd5e9f3f70e"
+    },
+    {
+      "source": "assets/graphics/characters/maru/motion/fullbody_v4/manifest.json",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/motion/fullbody_v4/manifest.json",
+      "bytes": 3318,
+      "sha256": "63270b49d9989bbf9a0ee2ec2992f57017a98bdf4e124b4956f30d088068bf15"
+    },
+    {
+      "source": "assets/graphics/characters/maru/motion/fullbody_v2/neutral-native.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/motion/fullbody_v2/neutral-native.png",
+      "bytes": 574390,
+      "sha256": "9ad62c735423d21d11a59ab2f0675bf5a876e65f7ebb15299a1e5f40cd699ccd"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/native_blink_v2/blink-025.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/native_blink_v2/blink-025.png",
+      "bytes": 574334,
+      "sha256": "5e872fbaa1090b4bdb6bdb9ef06a87d9255804ddd4b08148afdff22465f81bec"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/native_blink_v2/blink-050.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/native_blink_v2/blink-050.png",
+      "bytes": 573897,
+      "sha256": "417946a3b84dcbd3712637ea97f99dbfc185278633e3461abe03dc680abd025d"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/native_blink_v2/blink-075.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/native_blink_v2/blink-075.png",
+      "bytes": 572860,
+      "sha256": "f5e8b90ab7be04f680cedd6cf9424520b4a274098d80139a6dfe32f0d8dc4515"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/native_blink_v2/blink-100.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/native_blink_v2/blink-100.png",
+      "bytes": 572090,
+      "sha256": "753800b3b4a1a081ac5451c5796a157769c31dc71947d3fe0aafee96b1dc9f9d"
+    },
+    {
+      "source": "assets/graphics/characters/maru/motion/fullbody_v3/manifest.json",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/motion/fullbody_v3/manifest.json",
+      "bytes": 3494,
+      "sha256": "e1efef85a30b980525544ff66ee52c57233950ad130c5537843fbbb71eab50df"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/native_blink_v1/blink-025.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/native_blink_v1/blink-025.png",
+      "bytes": 573175,
+      "sha256": "801bc641e4dcb41c257d7410ac2dacd98aa2dbae6edad964d2cf04948a4d7cc1"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/native_blink_v1/blink-050.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/native_blink_v1/blink-050.png",
+      "bytes": 572345,
+      "sha256": "bd30fd4664537b23b4378e5bd05ac1ee99277e0dba14c33e946a2c0280253f0c"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/native_blink_v1/blink-075.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/native_blink_v1/blink-075.png",
+      "bytes": 571715,
+      "sha256": "9a8c15b277f8a89442ff0c4bb79881470781eea29367bfe6a1f825431b90e80e"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/native_blink_v1/blink-100.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/native_blink_v1/blink-100.png",
+      "bytes": 570675,
+      "sha256": "c2593555ae6683850c4053d5b9eb307930283f981b7cf15b256b8f77b73aa10f"
+    },
+    {
+      "source": "assets/graphics/characters/maru/motion/fullbody_v2/manifest.json",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/motion/fullbody_v2/manifest.json",
+      "bytes": 2794,
+      "sha256": "2be15a1a888eeb597419431fc969913638e3e665c0ed112f03f5f99dc778921d"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/portraits/portrait.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/portraits/portrait.png",
+      "bytes": 1207563,
+      "sha256": "d74b4cebc6aca3c91fee05b8eecd76bfc53501aa542c4774cc560bc6891bc5c1"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/manifest.json",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/manifest.json",
+      "bytes": 2221,
+      "sha256": "90c226b9fd238816fc345fe1e28e75ae8ad2f09f6e2587c8200f5bcf01c42b31"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/rig.json",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/rig.json",
+      "bytes": 7110,
+      "sha256": "272961ae6d4bd7c587ec8ba7e2c84b3c3987d3ecb7c8451818c8a131db132d80"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/neutral.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/neutral.png",
+      "bytes": 584532,
+      "sha256": "3acd5416438374a1cdd171d86b6f8b289807f2f06038e997e9e095e71b2adae8"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/backhair.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/backhair.png",
+      "bytes": 173531,
+      "sha256": "cc53c2fbb7bbe879b12f21c1dbb77b63780734fb43496c7e7deca9318e13a33e"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/backhair_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/backhair_depth.png",
+      "bytes": 27293,
+      "sha256": "29ba2cd1b31e133b13fcaf909da4c72aa8cf43c8161df44fc67e0ee78cc0553d"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/legwear.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/legwear.png",
+      "bytes": 125133,
+      "sha256": "761ad81e600599a73d5b1594fcefe86cafc24be8ec9cd991490a1ee984b6022f"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/legwear_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/legwear_depth.png",
+      "bytes": 22739,
+      "sha256": "592719129fa77e3587546461c4714527bb287893ec428960238992a4665caaa1"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/footwear.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/footwear.png",
+      "bytes": 47334,
+      "sha256": "54d38819e5e0015454dc2cd1f9399cdd297949e41c24903653e07b6b07353b5a"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/footwear_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/footwear_depth.png",
+      "bytes": 11180,
+      "sha256": "6c2da039fec493be487742c7dbc5247a9c2bf2e0dab5b1b98f0591f3722ec3e6"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/earwear.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/earwear.png",
+      "bytes": 6432,
+      "sha256": "8248c2389e6b09907eaa4efab6b26b0b05d2c998ce5f379c892289a182576c9a"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/earwear_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/earwear_depth.png",
+      "bytes": 4245,
+      "sha256": "c2c74b8aef331d873fa11e5fe3633003a8a7ad6fea8011b718ddd54a9a9ebb1c"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/bottomwear.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/bottomwear.png",
+      "bytes": 6432,
+      "sha256": "8248c2389e6b09907eaa4efab6b26b0b05d2c998ce5f379c892289a182576c9a"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/bottomwear_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/bottomwear_depth.png",
+      "bytes": 4245,
+      "sha256": "c2c74b8aef331d873fa11e5fe3633003a8a7ad6fea8011b718ddd54a9a9ebb1c"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/neck.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/neck.png",
+      "bytes": 11777,
+      "sha256": "827b9331d7c70a7d9c8ee5b7bdfb07fcb7b5b6cde134b79afd56c5097b2e4f33"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/neck_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/neck_depth.png",
+      "bytes": 5538,
+      "sha256": "098c40ace015f2a3643605d17ab2d38d19a9ce0f5be00a419b5193393bc76edb"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/handwear.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/handwear.png",
+      "bytes": 83917,
+      "sha256": "5dfd580628faf1a6b1e04f1eb7b53be86a7a6c88fc97057898c67c367ee33a78"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/handwear_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/handwear_depth.png",
+      "bytes": 22460,
+      "sha256": "5759260f76c979797eee58b0710ade1b67ff1e1d458717f60d05bf68e7ae17cd"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/topwear.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/topwear.png",
+      "bytes": 158514,
+      "sha256": "541edb9fe157657ae1f20f8b5416e24643a6674f27a18e0fc39a454b8fa12f70"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/topwear_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/topwear_depth.png",
+      "bytes": 28125,
+      "sha256": "c9913aed07f6b0807d71ffd783a7ecdb718fdd8ceddb2e457f1e85025bae00bb"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/ears.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/ears.png",
+      "bytes": 10845,
+      "sha256": "0e7acdd1b6bf36477e1c0b9879b9898d678c075e96766c11c975488cfc8fd0b0"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/ears_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/ears_depth.png",
+      "bytes": 5557,
+      "sha256": "caf9c807106bfd74cc1c7f880d201dd92eef5c890fbbb03ee4f194d7c857ca5b"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/face.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/face.png",
+      "bytes": 30661,
+      "sha256": "2f1abbecb64949954ccb435259cb3163e585a6a6767e51ebd25a9fb26117cd5d"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/face_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/face_depth.png",
+      "bytes": 10659,
+      "sha256": "9c5780c3fc441aa20be7f62b79ba3cccccaa4f8b3307924131a50dcf376210c8"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/eyebrow.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/eyebrow.png",
+      "bytes": 6932,
+      "sha256": "19246e7fdef9c184889fd060458e977a5972863663d52572e55e96d13a61337d"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/eyebrow_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/eyebrow_depth.png",
+      "bytes": 4454,
+      "sha256": "ba27d4bfa46001909271aa43a1c21ce536da841b64efb1b0239cf37847501edb"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/nose.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/nose.png",
+      "bytes": 7169,
+      "sha256": "0c8a7822cd7fb9f955cb3b8b669d79d2bc9ceb9d5803acee1ae901fd4252bc89"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/nose_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/nose_depth.png",
+      "bytes": 4588,
+      "sha256": "69d69424a6dba1f383e0b9a36d7f82066b077eb581f73db0f209e66373bd0b1f"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/mouth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/mouth.png",
+      "bytes": 6805,
+      "sha256": "22fcee26f5b3121acc05c7f30a9b1868d9f0e47ac4c3208ea2d42fd36c9f0a0a"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/mouth_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/mouth_depth.png",
+      "bytes": 4423,
+      "sha256": "321f1186f2ad7387109a44ea3466702b10943320d68c90146d436b29e816bd58"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/eyewhite.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/eyewhite.png",
+      "bytes": 7704,
+      "sha256": "1888a65f706c9338c9bd90819720059146b8862a6c6262a3ef329a4444268b02"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/eyewhite_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/eyewhite_depth.png",
+      "bytes": 4712,
+      "sha256": "7dfdfc80a983ca9cccdf4e2b8b0c9ef79027509d8bd5af2529f9882e3e9accb0"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/irides.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/irides.png",
+      "bytes": 8779,
+      "sha256": "b71de7f777102c99e71b3b534acb3a02497183c3f16ec008bb4ea5836e012d78"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/irides_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/irides_depth.png",
+      "bytes": 4798,
+      "sha256": "2b775351123d32d19a2fcda196bf24ef8932b01b68973d1648c3245158428647"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/eyelash.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/eyelash.png",
+      "bytes": 10126,
+      "sha256": "239ec654205bdf398890c228200edb7487299d72db4c602f51eee046140be422"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/eyelash_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/eyelash_depth.png",
+      "bytes": 5594,
+      "sha256": "7a77887abd7c79d715f639bb2064f76d29dd4dfc41d127d1dd76aa0fb2e3b116"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/layers/fronthair.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/layers/fronthair.png",
+      "bytes": 66524,
+      "sha256": "d85f3cb9fa66238dc9482541f6151f4814e692e4da71a16446dae87b06d213f3"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/depth/fronthair_depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/depth/fronthair_depth.png",
+      "bytes": 19121,
+      "sha256": "0f684b1592ffd23683ac5500d247b3e92f485da6cb7239726ca90ae4e77995bd"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/manifest.json",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/manifest.json",
+      "bytes": 1354,
+      "sha256": "292adacdd9b821a59c6355d1dd265d3c5c225432523c5d8f98536f717b2379cf"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/base_left.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/base_left.png",
+      "bytes": 567107,
+      "sha256": "60afe58d0a99c37f2db21e09d09db57809d731ccccb46617ed593cba3595c95f"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/open_left.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/open_left.png",
+      "bytes": 9346,
+      "sha256": "34f7fe8804a5ab2c08f3c67aa9bc3a5e5ea8f7f7216821c233846ab66324484a"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/white_left.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/white_left.png",
+      "bytes": 7077,
+      "sha256": "aa0d172cbd8e28d1904e53d4db4ec4cc88ada93d29feeb5112421e050aba29b5"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/iris_left.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/iris_left.png",
+      "bytes": 7598,
+      "sha256": "cf6ceab86e2db90f08069e0f967f7facc40f47f5b3677ed38baa2f37f928b293"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/lash_left.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/lash_left.png",
+      "bytes": 8147,
+      "sha256": "95ee5dae4240b9ffa3dcde2edbb067a6039d4fe428214d356c2e985bf97eb504"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/closed_left.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/closed_left.png",
+      "bytes": 7105,
+      "sha256": "19b912d887aeaab681febc274af017cd13659d3af9e4d221ef15833d56e92f87"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/mask_left.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/mask_left.png",
+      "bytes": 7077,
+      "sha256": "aa0d172cbd8e28d1904e53d4db4ec4cc88ada93d29feeb5112421e050aba29b5"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/base_right.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/base_right.png",
+      "bytes": 565513,
+      "sha256": "03c002f165c904e1c844f93445b6fc68e75124a317ae66869cfd48881c0fd347"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/open_right.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/open_right.png",
+      "bytes": 10141,
+      "sha256": "882a64de5e812050d2bd45b92726b54c5caf644c339a69110fb40bbd58d77911"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/white_right.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/white_right.png",
+      "bytes": 6747,
+      "sha256": "635eb8a57f1d7082549d1e9143d5ed392dfac42c11e17248efbc475b2d7ea186"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/iris_right.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/iris_right.png",
+      "bytes": 7040,
+      "sha256": "a4c357fc3d50ae3e17d18ac7f6789944361c7cde35614ab47eb2794620a684d8"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/lash_right.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/lash_right.png",
+      "bytes": 7587,
+      "sha256": "f2d9d1005a84f24064a3a2fe6625d52c3e8ece97bbe2aba29d5d7e5f522fb7d9"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/closed_right.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/closed_right.png",
+      "bytes": 7219,
+      "sha256": "85b4c582b75cdd1e22b57cbcd3515157eb8b82eadbe78e87e1a6a3ec05f2106d"
+    },
+    {
+      "source": "assets/graphics/characters/Sophia/motion/eyes/mask_right.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/Sophia/motion/eyes/mask_right.png",
+      "bytes": 6747,
+      "sha256": "635eb8a57f1d7082549d1e9143d5ed392dfac42c11e17248efbc475b2d7ea186"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/happy_v1/maru-happy-native.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/happy_v1/maru-happy-native.png",
+      "bytes": 572177,
+      "sha256": "cc8980cddfbdfb87392495e6f892e21d04f08f4edbced0b2431a422aeb55724f"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/happy_v1/portrait.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/happy_v1/portrait.png",
+      "bytes": 604714,
+      "sha256": "599861b8d5f32470b284319cf68c42a408a1ac351080a45c2318506fcf2fd44b"
+    },
+    {
+      "source": "assets/graphics/characters/maru/portraits/portrait.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/portraits/portrait.png",
+      "bytes": 606429,
+      "sha256": "bb3a32fbd34a91fdc731bb48f472b4659fe0f665d4e0933f161da2cc50a84993"
+    },
+    {
+      "source": "assets/graphics/characters/maru/motion/casual_v1/portrait.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/motion/casual_v1/portrait.png",
+      "bytes": 687163,
+      "sha256": "da433efbc4e32f4683a709863ecb5811e70a37d9c3ba0f213f9fabe7c234a83a"
+    },
+    {
+      "source": "assets/graphics/characters/maru/motion/casual_v1/manifest.json",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/motion/casual_v1/manifest.json",
+      "bytes": 3030,
+      "sha256": "76c204f4327337c9ac080d20f1ae99f2a477fd846cbfc44ea1fb8d64a20dd3f4"
+    },
+    {
+      "source": "assets/graphics/characters/maru/maru_casual.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/maru_casual.png",
+      "bytes": 1192678,
+      "sha256": "ba5597a304e98d1e0153d1a0f6464a20ca0673d96a9e24b2dbac74c01b6701df"
+    },
+    {
+      "source": "assets/graphics/characters/maru/motion/casual_v1/depth.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/motion/casual_v1/depth.png",
+      "bytes": 61133,
+      "sha256": "c23c3abd8d425f2d7f37447b088e72446dabb8f99f487f3b1c8ff2743298ea4b"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/left_closed.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/left_closed.png",
+      "bytes": 720021,
+      "sha256": "4a959ccc47a982760e68088e6df79fb86f10deb59180bd83912310aeecf78252"
+    },
+    {
+      "source": "assets/graphics/characters/maru/facial_parts/right_closed.png",
+      "destination": "web-visual-novel/public/assets/graphics/characters/maru/facial_parts/right_closed.png",
+      "bytes": 719929,
+      "sha256": "8ac981b980e14243dac5bc5622f21019eb759e3b64e4e1468608cdf6d71d8840"
+    },
+    {
+      "source": "assets/graphics/backgrounds/locations/park.png",
+      "destination": "web-visual-novel/public/assets/graphics/backgrounds/locations/park.png",
+      "bytes": 4257920,
+      "sha256": "b04f81599cce0d73fe1102c8d6505786a7271eefec216ab653e5ae52af1fee1a"
+    },
+    {
+      "source": "assets/audio/dialogue-demo/demo_bgm.wav",
+      "destination": "web-visual-novel/public/assets/audio/dialogue-demo/demo_bgm.wav",
+      "bytes": 352844,
+      "sha256": "fe1354ecfb3db81182608ba27720769df93c531365c456686d901be18dd0a344"
+    },
+    {
+      "source": "assets/audio/dialogue-demo/demo_chime.wav",
+      "destination": "web-visual-novel/public/assets/audio/dialogue-demo/demo_chime.wav",
+      "bytes": 37528,
+      "sha256": "6e0f261af6a27dffbe13a3c1ff2c9a9719af1631bc4d82a11cf889bf51287a41"
+    },
+    {
+      "source": "assets/audio/dialogue-demo/demo_rain_loop.wav",
+      "destination": "web-visual-novel/public/assets/audio/dialogue-demo/demo_rain_loop.wav",
+      "bytes": 264644,
+      "sha256": "f5faca901a64f6b84e82d14b45061699c1643b4b92497164775043e342393860"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "replaceLayerNames": [],
+  "insertAfterLayer": "eyelash",
+  "eyes": [
+    {
+      "bounds": [
+        558,
+        127,
+        609,
+        156
+      ],
+      "center": [
+        588.5899355895458,
+        142.58634261793927
+      ],
+      "baseGraphicId": "Graphic1050",
+      "openGraphicId": "Graphic1051",
+      "whiteGraphicId": "Graphic1052",
+      "irisGraphicId": "Graphic1053",
+      "lashGraphicId": "Graphic1054",
+      "closedGraphicId": "Graphic1055",
+      "maskGraphicId": "Graphic1056",
+      "blinkAxis": [
+        [
+          573.0395746207114,
+          146.39726020807439
+        ],
+        [
+          604.1402965583802,
+          138.77542502780415
+        ]
+      ]
+    },
+    {
+      "bounds": [
+        629,
+        109,
+        683,
+        141
+      ],
+      "center": [
+        653.9938240934914,
+        128.14765536393105
+      ],
+      "baseGraphicId": "Graphic1057",
+      "openGraphicId": "Graphic1058",
+      "whiteGraphicId": "Graphic1059",
+      "irisGraphicId": "Graphic1060",
+      "lashGraphicId": "Graphic1061",
+      "closedGraphicId": "Graphic1062",
+      "maskGraphicId": "Graphic1063",
+      "blinkAxis": [
+        [
+          635.453781524285,
+          132.18366430796152
+        ],
+        [
+          672.5338666626977,
+          124.11164641990058
+        ]
+      ]
+    }
+  ]
+}

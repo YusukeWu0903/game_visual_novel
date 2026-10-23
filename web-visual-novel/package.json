@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test": "node --test tests/*.test.mjs",
     "dev": "python ../scripts/csv2json.py && vite",
     "build": "python ../scripts/csv2json.py && vite build",
     "preview": "vite preview"

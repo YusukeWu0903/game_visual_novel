@@ -1,0 +1,484 @@
+{
+  "schemaVersion": 1,
+  "task": "Natasha_PSD_20260929",
+  "candidate": "assembly_v7",
+  "nonProduction": true,
+  "reviewStatus": "pending",
+  "source": "Character/004_Natasha/Natasha_casual01.psd",
+  "sourceSha256": "9E78B78A824E7F2331301CA48BEC75DE04B3F0AEA62D1FE8C95A93E713DAC04B",
+  "illustration": "Character/004_Natasha/Natasha_casual01.png",
+  "illustrationSha256": "3F4616C1E4789257F628DD9D305A0ABC6B1C1B3921F17B6B434DACCB20CFD390",
+  "canvas": [
+    1280,
+    1280
+  ],
+  "drawOrder": [
+    {
+      "name": "headwear",
+      "file": "headwear.png",
+      "asset": "_review/assembly_v7/under_headwear.png",
+      "assetSha256": "0370103F59B1BBA92C2BAA9719900F156E20D9C8C03BC6C8978DECF209DE1695",
+      "label": "headwear · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "handwear",
+      "file": "handwear.png",
+      "asset": "_review/assembly_v7/under_handwear.png",
+      "assetSha256": "0AF87308910785BCE608C2012D6E77E7DE335C810933DB82639DFF6241664F31",
+      "label": "handwear · source-silhouette constrained backing",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "neck",
+      "file": "neck.png",
+      "asset": "_review/assembly_v7/under_neck.png",
+      "assetSha256": "3E7C205E4D090F657101E6742BBC46481ADEE7BD74E427F210087C7C5760E993",
+      "label": "neck · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "legwear",
+      "file": "legwear.png",
+      "asset": "_review/assembly_v7/under_legwear.png",
+      "assetSha256": "369A7AF79999AA059A649F60DC3EF615A66E56B9E6DF97E18213243211067848",
+      "label": "legwear · source-silhouette constrained skin",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "backhair",
+      "file": "backhair.png",
+      "asset": "_review/assembly_v7/under_backhair.png",
+      "assetSha256": "C5581F5A17114E4A4DE6A589739FBA9CD1602D63210268B4C1903069BDFC1D68",
+      "label": "back hair · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "topwear",
+      "file": "topwear.png",
+      "asset": "_review/assembly_v7/under_topwear.png",
+      "assetSha256": "FF4B8DB4EFE451B1D2677500B634BFCA635E15E0C590764CEF7023C3EB04FB8D",
+      "label": "topwear · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "ears",
+      "file": "ears.png",
+      "asset": "_review/assembly_v7/under_ears.png",
+      "assetSha256": "95A4841470D38BD4BEF8C209796B88E39FA16258C74C5712D69641E71671BAC0",
+      "label": "ears · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "face",
+      "file": "face.png",
+      "asset": "_review/assembly_v7/under_face.png",
+      "assetSha256": "0AF557A30D61E0ACA059089B0849DE40B35C472AA240E85F2B8EA2A27C9BF312",
+      "label": "face · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "nose",
+      "file": "nose.png",
+      "asset": "_review/assembly_v7/under_nose.png",
+      "assetSha256": "0C8B0FEB5382C28E2D17EA16342C624F3D6CF586168433C29EC68BE220AA1DC2",
+      "label": "nose · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "eyebrow",
+      "file": "eyebrow.png",
+      "asset": "_review/assembly_v7/under_eyebrow.png",
+      "assetSha256": "4E8706C35BB03A8A7E2332091A95B1F9292D17988C34F0AE74DC79A90D275188",
+      "label": "eyebrow · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "mouth",
+      "file": "mouth.png",
+      "asset": "_review/assembly_v7/under_mouth.png",
+      "assetSha256": "1C9F03D659A5B73903A198823F6E24DB19D71A33737018623E6A5D13FEA4C21B",
+      "label": "mouth · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "eyewhite",
+      "file": "eyewhite.png",
+      "asset": "_review/assembly_v7/under_eyewhite.png",
+      "assetSha256": "0146CAB85D48174E827AB0E6D3889903995E34A585F0A43A0043B5EB85A85410",
+      "label": "eyewhite · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "eyewear",
+      "file": "eyewear.png",
+      "asset": "_review/assembly_v7/under_eyewear.png",
+      "assetSha256": "BE2C63767BFB8CE2F2DAA10AEF53019E24F99AA0C926DDD560EB1C24A537431A",
+      "label": "eyewear · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "eyelash",
+      "file": "eyelash.png",
+      "asset": "_review/assembly_v7/under_eyelash.png",
+      "assetSha256": "5B5A38669D1BD3B56FF83CECD6402819FBA721E335E14BA876F36BE6B703BA90",
+      "label": "eyelash · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "irides",
+      "file": "irides.png",
+      "asset": "_review/assembly_v7/under_irides.png",
+      "assetSha256": "0D4D15196A119DFC2559504FA07A2CDC0526D056035409B0615D1A4CBCBC91C5",
+      "label": "irides · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "fronthair",
+      "file": "fronthair.png",
+      "asset": "_review/assembly_v7/under_fronthair.png",
+      "assetSha256": "D82123BA6845F93DBE1822A2CCDEC76884822785CF61C77419C6F9EC16B183F3",
+      "label": "front hair · PSD concealed underfill",
+      "group": "character",
+      "parent": "root"
+    },
+    {
+      "name": "vis_legwear",
+      "file": "vis_legwear.png",
+      "asset": "_review/assembly_v7/vis_legwear.png",
+      "assetSha256": "CED03F60A61D58870FFA643342A09F7C321F2CA14B416A4920128B8E38F56C64",
+      "label": "legwear · original visible paint",
+      "group": "character",
+      "parent": "body"
+    },
+    {
+      "name": "vis_backhair",
+      "file": "vis_backhair.png",
+      "asset": "_review/assembly_v7/vis_backhair.png",
+      "assetSha256": "C9CFFAF47D4B2619BDBBC06D406CAFA3F72233CAA0AEFF4D439DDEA382883717",
+      "label": "back hair · original visible paint",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "vis_handwear",
+      "file": "vis_handwear.png",
+      "asset": "_review/assembly_v7/vis_handwear.png",
+      "assetSha256": "2BD84AC3A5CC5FB818A50B68247A0147172827ECCDC8A84BDBC74B9642993979",
+      "label": "handwear · original visible paint",
+      "group": "character",
+      "parent": "torso"
+    },
+    {
+      "name": "hem_shadow",
+      "file": "hem_shadow.png",
+      "asset": "_review/assembly_v7/hem_shadow.png",
+      "assetSha256": "0E1D8D5FC367D5D0A1813D1F2E9AD2D7C1CA46CE7E20D9D8222A1B77F03D5E88",
+      "label": "skirt hem · moving soft shadow",
+      "group": "character",
+      "parent": "torso"
+    },
+    {
+      "name": "vis_topwear",
+      "file": "vis_topwear.png",
+      "asset": "_review/assembly_v7/vis_topwear.png",
+      "assetSha256": "8E6374C1D5930949E22D15212A7FF73D897C2E0060FD52D8045FDE9DBDC7DFC2",
+      "label": "topwear · original visible paint",
+      "group": "character",
+      "parent": "torso"
+    },
+    {
+      "name": "vis_neck",
+      "file": "vis_neck.png",
+      "asset": "_review/assembly_v7/vis_neck.png",
+      "assetSha256": "7721AE675010884EB7ACB613418732FF1CCC98AE722A39E9505277A254241091",
+      "label": "neck · original visible paint",
+      "group": "character",
+      "parent": "torso"
+    },
+    {
+      "name": "vis_ears",
+      "file": "vis_ears.png",
+      "asset": "_review/assembly_v7/vis_ears.png",
+      "assetSha256": "0422D798647EC6BE04F711B5E855CD7EF7E7DD888EBF35C502E027F442D83324",
+      "label": "ears · original visible paint",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "vis_face",
+      "file": "vis_face.png",
+      "asset": "_review/assembly_v7/vis_face.png",
+      "assetSha256": "E70B875C28CBEB2479587FFB2530D94F5E15DABEEC22B9C0CAC42F307309387C",
+      "label": "face · original visible paint",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "vis_nose",
+      "file": "vis_nose.png",
+      "asset": "_review/assembly_v7/vis_nose.png",
+      "assetSha256": "8CD0433BA0AD4A0B4D8725153B5D58EAC27F2C4404FA244F21D1606CCB131C53",
+      "label": "nose · original visible paint",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "vis_mouth",
+      "file": "vis_mouth.png",
+      "asset": "_review/assembly_v7/vis_mouth.png",
+      "assetSha256": "33C7F07B323D9A7E26F985C7D8D8F4B60E5108EF56F8E3A2CAB55906464D3468",
+      "label": "mouth · original visible paint",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "vis_eyebrow",
+      "file": "vis_eyebrow.png",
+      "asset": "_review/assembly_v7/vis_eyebrow.png",
+      "assetSha256": "BF10D5EE04E64E33367619C39C7FE82EB1F59EF4EE78578C5ACFD912D9C48998",
+      "label": "eyebrow · original visible paint",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "vis_eyewhite",
+      "file": "vis_eyewhite.png",
+      "asset": "_review/assembly_v7/vis_eyewhite.png",
+      "assetSha256": "CB37862ED2C5668925DDA902DC87D6916447C296CCF9E77CAD3D71FB45BCAE9B",
+      "label": "eyewhite · original visible paint",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "vis_irides",
+      "file": "vis_irides.png",
+      "asset": "_review/assembly_v7/vis_irides.png",
+      "assetSha256": "88D7CF2926E337D2339BAD5A2DBED37411F62098E7291A46C9A6E72F8DF38CE1",
+      "label": "irides · original visible paint",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "vis_eyelash",
+      "file": "vis_eyelash.png",
+      "asset": "_review/assembly_v7/vis_eyelash.png",
+      "assetSha256": "F743EF1AF4F3907331502EE2B21A5BA22D7C8C8CC7CFB31D67B46BEF73B4806E",
+      "label": "eyelash · original visible paint",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "vis_fronthair",
+      "file": "vis_fronthair.png",
+      "asset": "_review/assembly_v7/vis_fronthair.png",
+      "assetSha256": "4CE787506B11AE59717531F90E6E0FE2AA82B35B2610D118DB5260CB86040ECA",
+      "label": "front hair · original visible paint",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "vis_eyewear",
+      "file": "vis_eyewear.png",
+      "asset": "_review/assembly_v7/vis_eyewear.png",
+      "assetSha256": "4F206F9B7CA474147427E2913E9A68F600118A2C1515DA5487FD8BD9F8AACFE9",
+      "label": "eyewear · original visible paint",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "vis_headwear",
+      "file": "vis_headwear.png",
+      "asset": "_review/assembly_v7/vis_headwear.png",
+      "assetSha256": "0BEB3F6C41A82CA590194107DC83CB4A32DD76807F32830AC70F48A07F5AF447",
+      "label": "headwear · original visible paint",
+      "group": "character",
+      "parent": "head"
+    }
+  ],
+  "derivedLayers": [
+    {
+      "file": "vis_headwear.png",
+      "sourceFiles": [
+        "headwear.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_handwear.png",
+      "sourceFiles": [
+        "handwear.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_neck.png",
+      "sourceFiles": [
+        "neck.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_legwear.png",
+      "sourceFiles": [
+        "legwear.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_backhair.png",
+      "sourceFiles": [
+        "backhair.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_topwear.png",
+      "sourceFiles": [
+        "topwear.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_ears.png",
+      "sourceFiles": [
+        "ears.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_face.png",
+      "sourceFiles": [
+        "face.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_nose.png",
+      "sourceFiles": [
+        "nose.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_eyebrow.png",
+      "sourceFiles": [
+        "eyebrow.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_mouth.png",
+      "sourceFiles": [
+        "mouth.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_eyewhite.png",
+      "sourceFiles": [
+        "eyewhite.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_eyewear.png",
+      "sourceFiles": [
+        "eyewear.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_eyelash.png",
+      "sourceFiles": [
+        "eyelash.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_irides.png",
+      "sourceFiles": [
+        "irides.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "vis_fronthair.png",
+      "sourceFiles": [
+        "fronthair.png"
+      ],
+      "method": "registered original illustration pixels assigned by PSD alpha owner; nearest PSD owner only where no layer covered source"
+    },
+    {
+      "file": "hem_shadow.png",
+      "sourceFiles": [
+        "legwear.png",
+        "topwear.png"
+      ],
+      "method": "soft hem darkness separated from source-painted thigh edge; aligned to source skirt hem and moved with topwear"
+    }
+  ],
+  "constraints": [
+    {
+      "behind": "vis_backhair.png",
+      "inFrontOf": "vis_face.png",
+      "reason": "rear hair behind source face"
+    },
+    {
+      "behind": "vis_face.png",
+      "inFrontOf": "vis_fronthair.png",
+      "reason": "front hair occludes face"
+    },
+    {
+      "behind": "vis_fronthair.png",
+      "inFrontOf": "vis_headwear.png",
+      "reason": "hat brim occludes fringe"
+    },
+    {
+      "behind": "vis_handwear.png",
+      "inFrontOf": "vis_topwear.png",
+      "reason": "moving dress and right tie occlude the right forearm"
+    },
+    {
+      "behind": "vis_legwear.png",
+      "inFrontOf": "hem_shadow.png",
+      "reason": "separated hem shadow overlays continuous thigh skin"
+    },
+    {
+      "behind": "vis_handwear.png",
+      "inFrontOf": "hem_shadow.png",
+      "reason": "separated hem shadow is above right forearm skin"
+    },
+    {
+      "behind": "hem_shadow.png",
+      "inFrontOf": "vis_topwear.png",
+      "reason": "moving skirt covers its own hem shadow"
+    }
+  ],
+  "rollbackManifest": "_review/assembly_v6/assembly.json",
+  "limits": [
+    "Source-visible slices have no exact painted concealed continuation.",
+    "PSD underfill is inferred artwork and source PSD has visible hat/shoulder defects.",
+    "Pseudo-depth is an ownership guide, never automatic pixel replacement.",
+    "A 16-pixel concealed skin band is extrapolated from adjacent original thigh paint; hidden anatomy beyond it is not established.",
+    "Only narrow concealed skin at the existing side ties and right forearm is inferred; independent arm movement needs separate review.",
+    "Screen-left tie backing follows a task-specific source thigh contour; outer transparent tie gap stays unpainted.",
+    "Concealed skin and detached hem shadow are task-specific inferred paint; motion is limited to the reviewed four-pixel skirt sway.",
+    "The v6 broad forearm plate was rejected; source silhouette and four-pixel arm-edge limits apply to hidden skin."
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "canvas": [
+    1280,
+    1280
+  ],
+  "layers": {
+    "irides": {
+      "left": {
+        "pixels": 227,
+        "bbox": [
+          643,
+          161,
+          657,
+          180
+        ]
+      },
+      "right": {
+        "pixels": 338,
+        "bbox": [
+          707,
+          187,
+          731,
+          206
+        ]
+      },
+      "midpoint": 684.5
+    },
+    "eyewhite": {
+      "left": {
+        "pixels": 450,
+        "bbox": [
+          633,
+          155,
+          658,
+          182
+        ]
+      },
+      "right": {
+        "pixels": 674,
+        "bbox": [
+          697,
+          185,
+          736,
+          211
+        ]
+      },
+      "midpoint": 681.0
+    },
+    "eyelash": {
+      "left": {
+        "pixels": 365,
+        "bbox": [
+          616,
+          147,
+          658,
+          181
+        ]
+      },
+      "right": {
+        "pixels": 450,
+        "bbox": [
+          694,
+          176,
+          743,
+          210
+        ]
+      },
+      "midpoint": 681.0
+    }
+  },
+  "mask": {
+    "source": "eyewhite_alpha",
+    "sampling": "destination_uv",
+    "alphaThreshold": 8,
+    "minimumRelativeCoverage": 0.865
+  },
+  "limits": {
+    "gazeX": 0.002734,
+    "gazeY": 0.002344,
+    "pixels": {
+      "x": 1.75,
+      "y": 1.5
+    }
+  },
+  "eyeCenters": {
+    "left": [
+      0.015625,
+      0.733594
+    ],
+    "right": [
+      0.123438,
+      0.692969
+    ]
+  },
+  "eyeCenter": [
+    0.069531,
+    0.713281
+  ]
+}

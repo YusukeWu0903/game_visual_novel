@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "task": "Natasha_PSD_20260929",
+  "candidate": "motion_v10",
+  "characterName": "Natasha",
+  "candidateTitle": "Natasha · 原畫臀部陰影與受限補圖候選",
+  "name": "Natasha continuous inner left tie and right forearm underlay",
+  "nonProduction": true,
+  "reviewStatus": "pending",
+  "coordinateSpace": "canvas-pixels",
+  "canvas": [
+    1280,
+    1280
+  ],
+  "layerCount": 33,
+  "sourceSha256": "9E78B78A824E7F2331301CA48BEC75DE04B3F0AEA62D1FE8C95A93E713DAC04B",
+  "assembly": "_review/assembly_v9/assembly.json",
+  "assemblySha256": "2288069DA861AABB87B1051AA3E48451C2597C336903054C19129C5A486F536D",
+  "rollbackManifest": "_review/motion_v9/rig.json",
+  "staticLayers": [],
+  "grounding": {
+    "mode": "shared-stance-field",
+    "groundY": 1280,
+    "stripHeight": 4,
+    "bands": [
+      {
+        "y": 0,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 280,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 490,
+        "body": 8,
+        "torso": 2,
+        "head": 0
+      },
+      {
+        "y": 740,
+        "body": 5,
+        "torso": 1,
+        "head": 0
+      },
+      {
+        "y": 1000,
+        "body": 2,
+        "torso": 0,
+        "head": 0
+      },
+      {
+        "y": 1280,
+        "body": 0,
+        "torso": 0,
+        "head": 0
+      }
+    ]
+  },
+  "pointerFollow": {
+    "mode": "smoothed-additive",
+    "centerX": 640,
+    "radius": 500,
+    "responseRate": 6,
+    "body": 0.4,
+    "torso": 0.05,
+    "head": 0.05
+  },
+  "nodes": [
+    {
+      "id": "root",
+      "parent": null,
+      "pivot": [
+        0,
+        0
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "body",
+      "parent": "root",
+      "pivot": [
+        672,
+        1280
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "torso",
+      "parent": "body",
+      "pivot": [
+        640,
+        725
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "head",
+      "parent": "torso",
+      "pivot": [
+        680,
+        275
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "hair",
+      "parent": "head",
+      "pivot": [
+        720,
+        290
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    }
+  ],
+  "bindings": {
+    "headwear": "root",
+    "handwear": "root",
+    "neck": "root",
+    "legwear": "root",
+    "backhair": "root",
+    "topwear": "root",
+    "ears": "root",
+    "face": "root",
+    "nose": "root",
+    "eyebrow": "root",
+    "mouth": "root",
+    "eyewhite": "root",
+    "eyewear": "root",
+    "eyelash": "root",
+    "irides": "root",
+    "fronthair": "root",
+    "vis_legwear": "body",
+    "vis_backhair": "hair",
+    "vis_topwear": "torso",
+    "vis_handwear": "torso",
+    "vis_neck": "torso",
+    "vis_ears": "head",
+    "vis_face": "head",
+    "vis_nose": "head",
+    "vis_mouth": "head",
+    "vis_eyebrow": "head",
+    "vis_eyewhite": "head",
+    "vis_irides": "head",
+    "vis_eyelash": "head",
+    "vis_fronthair": "hair",
+    "vis_eyewear": "head",
+    "vis_headwear": "head",
+    "hem_shadow": "torso"
+  },
+  "bustField": {
+    "mode": "composite-chest-field",
+    "label": "肩背呼吸",
+    "centerX": 674,
+    "centerY": 445,
+    "radiusX": 160,
+    "radiusY": 120,
+    "maxPixels": 2,
+    "tileWidth": 16,
+    "tileHeight": 3,
+    "defaultStrength": 55
+  },
+  "limits": [
+    "原圖可見畫素中立姿勢完全一致；16 個 PSD 原層只作隱藏處補底。",
+    "輕微站姿重心、肩背呼吸與裙身橫向延遲；頭、帽沿和髮辮隨整體動作。",
+    "獨立髮絲旋轉在 v1 露出黑點，因此本版停用；沒有獨立手肘、膝蓋或轉頭側面。",
+    "畫面底部沿用原圖裁切；裙身動態與原圖相似度待使用者目視驗收。",
+    "裙下只補足 16 像素內的隱藏膚色；較大裙擺或抬裙動作仍須專門繪製。",
+    "左綁帶下的腿部與右綁帶下的前臂為窄幅推估補圖，待目視驗收。",
+    "裙緣陰影已獨立於皮膚，隨裙身同位移；目視驗收仍待使用者確認。",
+    "v7 的寬幅前臂補底已撤回，隱藏膚色受原圖輪廓限制。",
+    "原畫臀部陰影保留；裙緣移動影僅處理最靠近裙邊的狹窄區域。"
+  ],
+  "skirtSway": {
+    "mode": "anchored-horizontal-lag",
+    "owner": "vis_topwear",
+    "anchorY": 690,
+    "hemY": 1080,
+    "maxPixels": 4,
+    "gainPixels": 8,
+    "frequency": 5,
+    "damping": 0.75,
+    "stripHeight": 1,
+    "followers": [
+      "hem_shadow"
+    ]
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "task": "Natasha_PSD_20260929",
+  "candidate": "assembly_transplant_casual02_repair_v7",
+  "nonProduction": true,
+  "reviewStatus": "pending",
+  "source": "Character/004_Natasha/Natasha_casual01.psd",
+  "sourceSha256": "9E78B78A824E7F2331301CA48BEC75DE04B3F0AEA62D1FE8C95A93E713DAC04B",
+  "illustration": "Character/004_Natasha/Natasha_casual01.png",
+  "illustrationSha256": "3F4616C1E4789257F628DD9D305A0ABC6B1C1B3921F17B6B434DACCB20CFD390",
+  "canvas": [
+    1280,
+    1280
+  ],
+  "rollbackManifest": "_review/assembly_transplant_casual02_repair_v6/assembly.json",
+  "limits": [
+    "v7 adds only the two remaining source-registered casual02 skin components (20px and 5px) missing under topwear on the left thigh; raw donor RGB/alpha only, no painted pixels.",
+    "handwear is placed behind topwear so the source-painted dress ties remain visible; hand_back remains behind legwear.",
+    "17 semantic slots retained; front-to-back layer panel ordering and all three left/right/intermediate states pending user review."
+  ],
+  "drawOrder": [
+    {
+      "name": "hand_back",
+      "file": "hand_back.png",
+      "asset": "_review/assembly_transplant_casual02_repair_v7/hand_back.png",
+      "assetSha256": "42EBAC6A922A666F054470F24223D433C4F49B5F2496A0FC9573AA380268745B",
+      "label": "右手／前臂整塊來源移植（裙後）",
+      "group": "character",
+      "parent": "torso"
+    },
+    {
+      "name": "legwear",
+      "file": "legwear.png",
+      "asset": "_review/assembly_transplant_casual02_repair_v7/legwear.png",
+      "assetSha256": "BF9C79FDB6C361323A670CB7E5CC17F7765E64F994956626F755924F438BBE38",
+      "label": "legwear · casual02 整塊來源移植候選",
+      "group": "character",
+      "parent": "body"
+    },
+    {
+      "name": "hem_shadow",
+      "file": "hem_shadow.png",
+      "label": "裙緣投影（跟裙移動）",
+      "group": "character",
+      "parent": "torso",
+      "asset": "_review/assembly_shadow_v22/hem_shadow.png",
+      "assetSha256": "70F042EA7B2AB9798039827870D82BEE1B37CE44B2A0A0ED23B86DD1430CA3E5"
+    },
+    {
+      "name": "backhair",
+      "file": "backhair.png",
+      "asset": "_review/assembly_shadow_v22/backhair.png",
+      "assetSha256": "C9CFFAF47D4B2619BDBBC06D406CAFA3F72233CAA0AEFF4D439DDEA382883717",
+      "label": "back hair",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "handwear",
+      "file": "handwear.png",
+      "asset": "_review/assembly_shadow_v22/handwear.png",
+      "assetSha256": "4EAE164C90CB3A15E64D1F4E14DDF29CEC57C6B9BA7D4A0EFCAC8C8A07E8BC9D",
+      "label": "handwear",
+      "group": "character",
+      "parent": "torso"
+    },
+    {
+      "name": "topwear",
+      "file": "topwear.png",
+      "asset": "_review/assembly_shadow_v22/topwear.png",
+      "assetSha256": "8E6374C1D5930949E22D15212A7FF73D897C2E0060FD52D8045FDE9DBDC7DFC2",
+      "label": "topwear",
+      "group": "character",
+      "parent": "torso"
+    },
+    {
+      "name": "neck",
+      "file": "neck.png",
+      "asset": "_review/assembly_shadow_v22/neck.png",
+      "assetSha256": "7721AE675010884EB7ACB613418732FF1CCC98AE722A39E9505277A254241091",
+      "label": "neck",
+      "group": "character",
+      "parent": "torso"
+    },
+    {
+      "name": "ears",
+      "file": "ears.png",
+      "asset": "_review/assembly_shadow_v22/ears.png",
+      "assetSha256": "0422D798647EC6BE04F711B5E855CD7EF7E7DD888EBF35C502E027F442D83324",
+      "label": "ears",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "face",
+      "file": "face.png",
+      "asset": "_review/assembly_shadow_v22/face.png",
+      "assetSha256": "8AE75B7CC560B05FBB2AC675FCBA8884F518B7A37A61EC405E8245AC20B04F42",
+      "label": "face",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "mouth",
+      "file": "mouth.png",
+      "asset": "_review/assembly_shadow_v22/mouth.png",
+      "assetSha256": "33C7F07B323D9A7E26F985C7D8D8F4B60E5108EF56F8E3A2CAB55906464D3468",
+      "label": "mouth",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "eyebrow",
+      "file": "eyebrow.png",
+      "asset": "_review/assembly_shadow_v22/eyebrow.png",
+      "assetSha256": "BF10D5EE04E64E33367619C39C7FE82EB1F59EF4EE78578C5ACFD912D9C48998",
+      "label": "eyebrow",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "eyewhite",
+      "file": "eyewhite.png",
+      "asset": "_review/assembly_shadow_v22/eyewhite.png",
+      "assetSha256": "CB37862ED2C5668925DDA902DC87D6916447C296CCF9E77CAD3D71FB45BCAE9B",
+      "label": "eyewhite",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "irides",
+      "file": "irides.png",
+      "asset": "_review/assembly_shadow_v22/irides.png",
+      "assetSha256": "88D7CF2926E337D2339BAD5A2DBED37411F62098E7291A46C9A6E72F8DF38CE1",
+      "label": "irides",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "eyelash",
+      "file": "eyelash.png",
+      "asset": "_review/assembly_shadow_v22/eyelash.png",
+      "assetSha256": "F743EF1AF4F3907331502EE2B21A5BA22D7C8C8CC7CFB31D67B46BEF73B4806E",
+      "label": "eyelash",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "fronthair",
+      "file": "fronthair.png",
+      "asset": "_review/assembly_shadow_v22/fronthair.png",
+      "assetSha256": "4CE787506B11AE59717531F90E6E0FE2AA82B35B2610D118DB5260CB86040ECA",
+      "label": "front hair",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "eyewear",
+      "file": "eyewear.png",
+      "asset": "_review/assembly_shadow_v22/eyewear.png",
+      "assetSha256": "4F206F9B7CA474147427E2913E9A68F600118A2C1515DA5487FD8BD9F8AACFE9",
+      "label": "eyewear",
+      "group": "character",
+      "parent": "head"
+    },
+    {
+      "name": "headwear",
+      "file": "headwear.png",
+      "asset": "_review/assembly_shadow_v22/headwear.png",
+      "assetSha256": "0BEB3F6C41A82CA590194107DC83CB4A32DD76807F32830AC70F48A07F5AF447",
+      "label": "headwear",
+      "group": "character",
+      "parent": "head"
+    }
+  ],
+  "constraints": [
+    {
+      "behind": "legwear.png",
+      "inFrontOf": "topwear.png",
+      "reason": "source garment occludes the thigh at neutral"
+    },
+    {
+      "behind": "backhair.png",
+      "inFrontOf": "face.png",
+      "reason": "source rear hair behind face"
+    },
+    {
+      "behind": "face.png",
+      "inFrontOf": "fronthair.png",
+      "reason": "source front hair occludes face"
+    },
+    {
+      "behind": "fronthair.png",
+      "inFrontOf": "headwear.png",
+      "reason": "source hat occludes fringe"
+    },
+    {
+      "behind": "hem_shadow.png",
+      "inFrontOf": "topwear.png",
+      "reason": "the dress occludes its cast shadow"
+    },
+    {
+      "behind": "hand_back.png",
+      "inFrontOf": "legwear.png",
+      "reason": "right hand is behind the thigh in the source drawing"
+    },
+    {
+      "behind": "legwear.png",
+      "inFrontOf": "topwear.png",
+      "reason": "source garment occludes the thigh at neutral"
+    },
+    {
+      "behind": "hand_back.png",
+      "inFrontOf": "topwear.png",
+      "reason": "concealed right forearm stays behind dress"
+    },
+    {
+      "behind": "handwear.png",
+      "inFrontOf": "topwear.png",
+      "reason": "source-painted dress and hanging ties occlude the right hand/skin where they overlap"
+    }
+  ],
+  "derivedLayers": [
+    {
+      "file": "hand_back.png",
+      "sourceFiles": [
+        "handwear.png"
+      ],
+      "method": "registered whole right hand/forearm source-skin block from casual02 behind topwear; raw donor RGB projectively resampled; no painted pixels"
+    },
+    {
+      "file": "hem_shadow.png",
+      "sourceFiles": [
+        "legwear.png",
+        "topwear.png"
+      ],
+      "method": "source-dark-edge inversion and source-adjacent hidden continuation; follows pinned skirt field"
+    }
+  ],
+  "notes": [
+    "17 semantic slots; face and nose are consolidated because both share the same head parent.",
+    "Both original source fragments remain immutable in compact_source_16_v1.",
+    "Art and continuous motion still need native browser and user review before acceptance.",
+    "v5 uses the user's whole-source-block request; v1's 272 alpha expansions and full contour trace were excluded after visual review.",
+    "v6 restores the omitted 247px registered left-thigh component and moves hand_back behind legwear to respect source occlusion; v5 preserved as rollback.",
+    "v7 adds the two remaining donor-supported left-thigh underfill components (20px + 5px) and places handwear behind topwear; drawOrder stays back-to-front for compositing and viewer displays it reversed, front-to-back."
+  ],
+  "mergedOriginalLayers": [
+    {
+      "targetFile": "face.png",
+      "sourceFiles": [
+        "face.png",
+        "nose.png"
+      ],
+      "method": "same-parent source-over composite; both original assets retained in compact_source_16_v1"
+    }
+  ],
+  "donorRegistration": {
+    "source": "Character/004_Natasha/Natasha_casual02.png",
+    "sourceSha256": "7D1D661537FFEB382BEA1F7156E2CFED18FBFCCB1FCE1ACA3DFECFA1DD88E5F8",
+    "target": "Character/004_Natasha/Natasha_casual01.png",
+    "method": "SIFT projective registration, 348/390 inliers; donor source RGB projectively resampled; source-skin connected components clipped to task-local anatomical regions",
+    "homography": [
+      [
+        0.8237074869,
+        -7.8358e-05,
+        213.177394
+      ],
+      [
+        -0.0026094657,
+        0.8311618111,
+        0.7615885
+      ],
+      [
+        -4.70022e-06,
+        2.69302e-07,
+        1.0
+      ]
+    ],
+    "repaintedPixels": 0
+  }
+}

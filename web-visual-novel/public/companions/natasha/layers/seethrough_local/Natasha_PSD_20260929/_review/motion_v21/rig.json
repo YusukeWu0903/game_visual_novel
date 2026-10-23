@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "task": "Natasha_PSD_20260929",
+  "candidate": "motion_v21",
+  "characterName": "Natasha",
+  "candidateTitle": "Natasha · 18 層陰影／裙擺診斷（非正式）",
+  "name": "Natasha pinned knots and moving hem shadow inspection",
+  "nonProduction": true,
+  "reviewStatus": "pending",
+  "coordinateSpace": "canvas-pixels",
+  "canvas": [
+    1280,
+    1280
+  ],
+  "layerCount": 18,
+  "sourceSha256": "9E78B78A824E7F2331301CA48BEC75DE04B3F0AEA62D1FE8C95A93E713DAC04B",
+  "assembly": "_review/assembly_shadow_v21/assembly.json",
+  "assemblySha256": "0709679B8F8AA097CC7EA1DE06CCE0BF59F545EBC82160B0F79BD54A04349778",
+  "rollbackManifest": "_review/motion_v12/rig.json",
+  "staticLayers": [],
+  "grounding": {
+    "mode": "shared-stance-field",
+    "groundY": 1280,
+    "stripHeight": 4,
+    "bands": [
+      {
+        "y": 0,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 280,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 490,
+        "body": 8,
+        "torso": 2,
+        "head": 0
+      },
+      {
+        "y": 740,
+        "body": 5,
+        "torso": 1,
+        "head": 0
+      },
+      {
+        "y": 1000,
+        "body": 2,
+        "torso": 0,
+        "head": 0
+      },
+      {
+        "y": 1280,
+        "body": 0,
+        "torso": 0,
+        "head": 0
+      }
+    ]
+  },
+  "pointerFollow": {
+    "mode": "smoothed-additive",
+    "centerX": 640,
+    "radius": 500,
+    "responseRate": 6,
+    "body": 0.4,
+    "torso": 0.05,
+    "head": 0.05
+  },
+  "nodes": [
+    {
+      "id": "root",
+      "parent": null,
+      "pivot": [
+        0,
+        0
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "body",
+      "parent": "root",
+      "pivot": [
+        672,
+        1280
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "torso",
+      "parent": "body",
+      "pivot": [
+        640,
+        725
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "head",
+      "parent": "torso",
+      "pivot": [
+        680,
+        275
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "hair",
+      "parent": "head",
+      "pivot": [
+        720,
+        290
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    }
+  ],
+  "bindings": {
+    "legwear": "body",
+    "backhair": "hair",
+    "topwear": "torso",
+    "handwear": "torso",
+    "neck": "torso",
+    "ears": "head",
+    "face": "head",
+    "nose": "head",
+    "mouth": "head",
+    "eyebrow": "head",
+    "eyewhite": "head",
+    "irides": "head",
+    "eyelash": "head",
+    "fronthair": "hair",
+    "eyewear": "head",
+    "headwear": "head",
+    "hand_back": "torso",
+    "hem_shadow": "torso"
+  },
+  "bustField": {
+    "mode": "composite-chest-field",
+    "label": "肩背呼吸",
+    "centerX": 674,
+    "centerY": 445,
+    "radiusX": 160,
+    "radiusY": 120,
+    "maxPixels": 2,
+    "tileWidth": 16,
+    "tileHeight": 3,
+    "defaultStrength": 55
+  },
+  "limits": [
+    "This is a diagnostic 18-slot candidate; layer consolidation and user review are pending.",
+    "At −100/0/+100 inspect left knot, both hem edges, right forearm and the original gluteal fold.",
+    "Owner-linked shadow is a layer that follows the pinned skirt motion; neutral is source-matched within three channel levels."
+  ],
+  "skirtSway": {
+    "mode": "anchored-horizontal-lag",
+    "owner": "topwear",
+    "anchorY": 690,
+    "hemY": 1080,
+    "maxPixels": 4,
+    "gainPixels": 8,
+    "frequency": 5,
+    "damping": 0.75,
+    "stripHeight": 1,
+    "followers": [
+      "hem_shadow"
+    ],
+    "pinnedX": {
+      "leftFixed": 555,
+      "leftFull": 655,
+      "rightFull": 800,
+      "rightFixed": 900
+    }
+  }
+}

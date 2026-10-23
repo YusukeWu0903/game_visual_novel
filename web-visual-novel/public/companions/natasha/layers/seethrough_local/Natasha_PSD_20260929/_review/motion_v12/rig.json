@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "task": "Natasha_PSD_20260929",
+  "candidate": "motion_v12",
+  "characterName": "Natasha",
+  "candidateTitle": "Natasha · 17 層逐層檢查（右手局部補圖）",
+  "name": "Natasha partial right-forearm underfill inspection",
+  "nonProduction": true,
+  "reviewStatus": "pending",
+  "coordinateSpace": "canvas-pixels",
+  "canvas": [
+    1280,
+    1280
+  ],
+  "layerCount": 17,
+  "sourceSha256": "9E78B78A824E7F2331301CA48BEC75DE04B3F0AEA62D1FE8C95A93E713DAC04B",
+  "assembly": "_review/assembly_hand_back_v12/assembly.json",
+  "assemblySha256": "59694DA0003C81BDB3A1A6DBF62F1506CAEAE590938E00FBFC80B3404E1CFF8C",
+  "rollbackManifest": "_review/motion_v11/rig.json",
+  "staticLayers": [],
+  "grounding": {
+    "mode": "shared-stance-field",
+    "groundY": 1280,
+    "stripHeight": 4,
+    "bands": [
+      {
+        "y": 0,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 280,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 490,
+        "body": 8,
+        "torso": 2,
+        "head": 0
+      },
+      {
+        "y": 740,
+        "body": 5,
+        "torso": 1,
+        "head": 0
+      },
+      {
+        "y": 1000,
+        "body": 2,
+        "torso": 0,
+        "head": 0
+      },
+      {
+        "y": 1280,
+        "body": 0,
+        "torso": 0,
+        "head": 0
+      }
+    ]
+  },
+  "pointerFollow": {
+    "mode": "smoothed-additive",
+    "centerX": 640,
+    "radius": 500,
+    "responseRate": 6,
+    "body": 0.4,
+    "torso": 0.05,
+    "head": 0.05
+  },
+  "nodes": [
+    {
+      "id": "root",
+      "parent": null,
+      "pivot": [
+        0,
+        0
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "body",
+      "parent": "root",
+      "pivot": [
+        672,
+        1280
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "torso",
+      "parent": "body",
+      "pivot": [
+        640,
+        725
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "head",
+      "parent": "torso",
+      "pivot": [
+        680,
+        275
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "hair",
+      "parent": "head",
+      "pivot": [
+        720,
+        290
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    }
+  ],
+  "bindings": {
+    "legwear": "body",
+    "backhair": "hair",
+    "topwear": "torso",
+    "handwear": "torso",
+    "neck": "torso",
+    "ears": "head",
+    "face": "head",
+    "nose": "head",
+    "mouth": "head",
+    "eyebrow": "head",
+    "eyewhite": "head",
+    "irides": "head",
+    "eyelash": "head",
+    "fronthair": "hair",
+    "eyewear": "head",
+    "headwear": "head",
+    "hand_back": "torso"
+  },
+  "bustField": {
+    "mode": "composite-chest-field",
+    "label": "肩背呼吸",
+    "centerX": 674,
+    "centerY": 445,
+    "radiusX": 160,
+    "radiusY": 120,
+    "maxPixels": 2,
+    "tileWidth": 16,
+    "tileHeight": 3,
+    "defaultStrength": 55
+  },
+  "limits": [
+    "右前臂僅使用原畫可見膚色在裙後補窄範圍；正面手部與中立原畫保留。",
+    "左綁帶、裙緣固定暗線、跟裙影仍未通過動態目視；請勿視為完成或發布。",
+    "保留 A 模式輕動態與原四像素裙擺位移，供逐層診斷。"
+  ],
+  "skirtSway": {
+    "mode": "anchored-horizontal-lag",
+    "owner": "topwear",
+    "anchorY": 690,
+    "hemY": 1080,
+    "maxPixels": 4,
+    "gainPixels": 8,
+    "frequency": 5,
+    "damping": 0.75,
+    "stripHeight": 1,
+    "followers": []
+  }
+}

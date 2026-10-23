@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "task": "Natasha_PSD_20260929",
+  "candidate": "motion_v2",
+  "characterName": "Natasha",
+  "candidateTitle": "Natasha · 原圖保真輕動態候選",
+  "name": "Natasha source-faithful stable first motion preview",
+  "nonProduction": true,
+  "reviewStatus": "pending",
+  "coordinateSpace": "canvas-pixels",
+  "canvas": [
+    1280,
+    1280
+  ],
+  "layerCount": 32,
+  "sourceSha256": "9E78B78A824E7F2331301CA48BEC75DE04B3F0AEA62D1FE8C95A93E713DAC04B",
+  "assembly": "_review/assembly_v2/assembly.json",
+  "assemblySha256": "53D54EC3A6D9CFFE52412869584847B55E4AB2F1EB5967676C568FD50ADE45C1",
+  "rollbackManifest": "_review/motion_v1/rig.json",
+  "staticLayers": [],
+  "grounding": {
+    "mode": "shared-stance-field",
+    "groundY": 1280,
+    "stripHeight": 4,
+    "bands": [
+      {
+        "y": 0,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 280,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 490,
+        "body": 8,
+        "torso": 2,
+        "head": 0
+      },
+      {
+        "y": 740,
+        "body": 5,
+        "torso": 1,
+        "head": 0
+      },
+      {
+        "y": 1000,
+        "body": 2,
+        "torso": 0,
+        "head": 0
+      },
+      {
+        "y": 1280,
+        "body": 0,
+        "torso": 0,
+        "head": 0
+      }
+    ]
+  },
+  "pointerFollow": {
+    "mode": "smoothed-additive",
+    "centerX": 640,
+    "radius": 500,
+    "responseRate": 6,
+    "body": 0.4,
+    "torso": 0.05,
+    "head": 0.05
+  },
+  "nodes": [
+    {
+      "id": "root",
+      "parent": null,
+      "pivot": [
+        0,
+        0
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "body",
+      "parent": "root",
+      "pivot": [
+        672,
+        1280
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "torso",
+      "parent": "body",
+      "pivot": [
+        640,
+        725
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "head",
+      "parent": "torso",
+      "pivot": [
+        680,
+        275
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "hair",
+      "parent": "head",
+      "pivot": [
+        720,
+        290
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    }
+  ],
+  "bindings": {
+    "headwear": "root",
+    "handwear": "root",
+    "neck": "root",
+    "legwear": "root",
+    "backhair": "root",
+    "topwear": "root",
+    "ears": "root",
+    "face": "root",
+    "nose": "root",
+    "eyebrow": "root",
+    "mouth": "root",
+    "eyewhite": "root",
+    "eyewear": "root",
+    "eyelash": "root",
+    "irides": "root",
+    "fronthair": "root",
+    "vis_legwear": "body",
+    "vis_backhair": "hair",
+    "vis_topwear": "torso",
+    "vis_handwear": "torso",
+    "vis_neck": "torso",
+    "vis_ears": "head",
+    "vis_face": "head",
+    "vis_nose": "head",
+    "vis_mouth": "head",
+    "vis_eyebrow": "head",
+    "vis_eyewhite": "head",
+    "vis_irides": "head",
+    "vis_eyelash": "head",
+    "vis_fronthair": "hair",
+    "vis_eyewear": "head",
+    "vis_headwear": "head"
+  },
+  "bustField": {
+    "mode": "composite-chest-field",
+    "label": "肩背呼吸",
+    "centerX": 674,
+    "centerY": 445,
+    "radiusX": 160,
+    "radiusY": 120,
+    "maxPixels": 2,
+    "tileWidth": 16,
+    "tileHeight": 3,
+    "defaultStrength": 55
+  },
+  "limits": [
+    "原圖可見畫素中立姿勢完全一致；16 個 PSD 原層只作隱藏處補底。",
+    "輕微站姿重心與肩背呼吸；頭、帽沿和髮辮隨整體動作，獨立髮絲旋轉尚未啟用。",
+    "沒有獨立手肘、膝蓋、轉頭側面或裙身擺動；畫面底部沿用原圖裁切。",
+    "v1 獨立髮絲旋轉在放大畫面露出黑點，本版停用該變形待補足隱藏畫素。"
+  ]
+}

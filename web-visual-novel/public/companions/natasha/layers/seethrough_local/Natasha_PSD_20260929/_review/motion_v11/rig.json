@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "task": "Natasha_PSD_20260929",
+  "candidate": "motion_v11",
+  "characterName": "Natasha",
+  "candidateTitle": "Natasha · 16 層逐層檢查（未修補露出）",
+  "name": "Natasha source-exact 16-layer motion inspection",
+  "nonProduction": true,
+  "reviewStatus": "pending",
+  "coordinateSpace": "canvas-pixels",
+  "canvas": [
+    1280,
+    1280
+  ],
+  "layerCount": 16,
+  "sourceSha256": "9E78B78A824E7F2331301CA48BEC75DE04B3F0AEA62D1FE8C95A93E713DAC04B",
+  "assembly": "_review/compact_source_16_v1/assembly.json",
+  "assemblySha256": "0A64367428D9281171B49D888ABD96F8006E8D2EE529091C2F81D3ABDEBDB415",
+  "rollbackManifest": "_review/motion_v10/rig.json",
+  "staticLayers": [],
+  "grounding": {
+    "mode": "shared-stance-field",
+    "groundY": 1280,
+    "stripHeight": 4,
+    "bands": [
+      {
+        "y": 0,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 280,
+        "body": 10,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 490,
+        "body": 8,
+        "torso": 2,
+        "head": 0
+      },
+      {
+        "y": 740,
+        "body": 5,
+        "torso": 1,
+        "head": 0
+      },
+      {
+        "y": 1000,
+        "body": 2,
+        "torso": 0,
+        "head": 0
+      },
+      {
+        "y": 1280,
+        "body": 0,
+        "torso": 0,
+        "head": 0
+      }
+    ]
+  },
+  "pointerFollow": {
+    "mode": "smoothed-additive",
+    "centerX": 640,
+    "radius": 500,
+    "responseRate": 6,
+    "body": 0.4,
+    "torso": 0.05,
+    "head": 0.05
+  },
+  "nodes": [
+    {
+      "id": "root",
+      "parent": null,
+      "pivot": [
+        0,
+        0
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "body",
+      "parent": "root",
+      "pivot": [
+        672,
+        1280
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "torso",
+      "parent": "body",
+      "pivot": [
+        640,
+        725
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "head",
+      "parent": "torso",
+      "pivot": [
+        680,
+        275
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "hair",
+      "parent": "head",
+      "pivot": [
+        720,
+        290
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    }
+  ],
+  "bindings": {
+    "legwear": "body",
+    "backhair": "hair",
+    "topwear": "torso",
+    "handwear": "torso",
+    "neck": "torso",
+    "ears": "head",
+    "face": "head",
+    "nose": "head",
+    "mouth": "head",
+    "eyebrow": "head",
+    "eyewhite": "head",
+    "irides": "head",
+    "eyelash": "head",
+    "fronthair": "hair",
+    "eyewear": "head",
+    "headwear": "head"
+  },
+  "bustField": {
+    "mode": "composite-chest-field",
+    "label": "肩背呼吸",
+    "centerX": 674,
+    "centerY": 445,
+    "radiusX": 160,
+    "radiusY": 120,
+    "maxPixels": 2,
+    "tileWidth": 16,
+    "tileHeight": 3,
+    "defaultStrength": 55
+  },
+  "limits": [
+    "逐層檢查用：16 個來源可見部件，中立合成逐像素符合原畫。",
+    "沿用先前 A 模式輕動態；裙擺仍使用原有四像素位移，未採納新動態範圍。",
+    "此候選沒有任何補圖或獨立裙影；左右端可能露出未繪區與綁帶鋸齒，請逐層查看。",
+    "過往 17/32/33 層試件均未被這個候選接受或取代；此候選不供發布。"
+  ],
+  "skirtSway": {
+    "mode": "anchored-horizontal-lag",
+    "owner": "topwear",
+    "anchorY": 690,
+    "hemY": 1080,
+    "maxPixels": 4,
+    "gainPixels": 8,
+    "frequency": 5,
+    "damping": 0.75,
+    "stripHeight": 1,
+    "followers": []
+  }
+}

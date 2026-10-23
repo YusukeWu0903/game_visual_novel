@@ -1,0 +1,131 @@
+{
+  "version": 4,
+  "sourceSha256": "76acae9a7067df5c6eabe824b970e335c2a1625f4049f92eefeeebd5e9f3f70e",
+  "assembly": "Maru_fullbody_20261021_181511/assembly_v6",
+  "blinkEnabled": true,
+  "pointerFollow": false,
+  "stanceBands": [
+    {
+      "y": 0,
+      "body": 6.091040001266006,
+      "torso": 1.0151733335443345,
+      "head": 0
+    },
+    {
+      "y": 315.722893364245,
+      "body": 6.091040001266006,
+      "torso": 1.0151733335443345,
+      "head": 0
+    },
+    {
+      "y": 394.39882671393093,
+      "body": 5.075866667721672,
+      "torso": 1.0151733335443345,
+      "head": 0
+    },
+    {
+      "y": 536.5230934101378,
+      "body": 3.553106667405171,
+      "torso": 0.5075866667721672,
+      "head": 0
+    },
+    {
+      "y": 676.1094267724837,
+      "body": 2.030346667088669,
+      "torso": 0,
+      "head": 0
+    },
+    {
+      "y": 1080,
+      "body": 0,
+      "torso": 0,
+      "head": 0
+    },
+    {
+      "y": 1280,
+      "body": 0,
+      "torso": 0,
+      "head": 0
+    }
+  ],
+  "chest": {
+    "x": 636.980470084622,
+    "y": 422.3160933864001,
+    "radiusX": 80.19869335000243,
+    "radiusY": 55.83453334493839,
+    "maxPixels": 1.5227600003165016
+  },
+  "fixedContactFromY": 1080,
+  "calibration": {
+    "scale": 1.9701069107255627,
+    "translation": [
+      -614.9196261109312,
+      -322.00785409116895
+    ]
+  },
+  "landmarks": {
+    "oldEyeCentres": [
+      [
+        595.9300134589502,
+        213.51547779273216
+      ],
+      [
+        696.1509186351706,
+        206.30971128608923
+      ]
+    ],
+    "newEyeCentres": [
+      [
+        614.6111325115562,
+        273.2604969183359
+      ],
+      [
+        665.4819277108434,
+        269.1265060240964
+      ]
+    ],
+    "oldHeadTopY": 7,
+    "newHeadTopY": 167
+  },
+  "coordinateSpace": "1280x1280 source pixels",
+  "referenceMetrics": "Legacy virtual standing reference retained to preserve face scale and head top; not measured sole height",
+  "roomStage": {
+    "portraitHeightPercent": 130.625,
+    "standingLineYPercent": 142.625
+  },
+  "sourceGraphicId": "Graphic1105",
+  "nativeSourceSha256": "9ad62c735423d21d11a59ab2f0675bf5a876e65f7ebb15299a1e5f40cd699ccd",
+  "rasterSize": {
+    "width": 790,
+    "height": 1843
+  },
+  "sourceMapping": {
+    "scaleX": 1.43984375,
+    "scaleY": 1.43984375,
+    "offsetX": -307,
+    "offsetY": 0
+  },
+  "qualityNote": "Sample accepted 1228x1843 original directly. Keep logical1280 rig and360x840 layout metrics; native raster790x1843 replaces rejected360x840 intermediate.",
+  "registration": "Upstream center_square_pad_resize: pad original to1843square at x307, then INTER_AREA downsample to1280; inverse mapping used directly without resizing source.",
+  "blinkFrames": [
+    {
+      "progress": 0.25,
+      "graphicId": "Graphic1117"
+    },
+    {
+      "progress": 0.5,
+      "graphicId": "Graphic1118"
+    },
+    {
+      "progress": 0.75,
+      "graphicId": "Graphic1119"
+    },
+    {
+      "progress": 1,
+      "graphicId": "Graphic1120"
+    }
+  ],
+  "blinkArtwork": "User accepted 2026-10-22 candidate_v2: supplied full-head reference extracted lids; source-owned open-eye contraction and quadratic blend; fixed periocular shadow retained.",
+  "reviewStatus": "User accepted slight visible residue and authorized integration 2026-10-22.",
+  "rollbackProfileGraphicId": "Graphic1116"
+}

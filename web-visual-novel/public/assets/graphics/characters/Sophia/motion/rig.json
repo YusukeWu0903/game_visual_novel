@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "task": "Sophia_fullbody_20261016_040107",
+  "characterName": "Sophia",
+  "nonProduction": true,
+  "reviewStatus": "pending",
+  "coordinateSpace": "canvas-pixels",
+  "canvas": [
+    1280,
+    1280
+  ],
+  "layerCount": 17,
+  "sourceSha256": "D74B4CEBC6ACA3C91FEE05B8EECD76BFC53501AA542C4774CC560BC6891BC5C1",
+  "assembly": "_review/assembly_v4/assembly.json",
+  "assemblySha256": "0B6A7372BCEE5F9749690A61D92877AD66FDBDCEA63C1622A59978027D1D054A",
+  "rollbackManifest": "_review/motion_v11/rig.json",
+  "staticLayers": [],
+  "interaction": {
+    "pointerFollow": false,
+    "freezeOnPause": true
+  },
+  "motionStrength": {
+    "default": 80,
+    "max": 100
+  },
+  "idleSway": {
+    "mode": "curved-sine",
+    "cycleSeconds": 7.8
+  },
+  "grounding": {
+    "mode": "shared-stance-field",
+    "groundY": 1278,
+    "stripHeight": 2,
+    "bands": [
+      {
+        "y": 0,
+        "body": 13,
+        "torso": 2,
+        "head": 1
+      },
+      {
+        "y": 210,
+        "body": 13,
+        "torso": 2,
+        "head": 0
+      },
+      {
+        "y": 360,
+        "body": 14,
+        "torso": 1,
+        "head": 0
+      },
+      {
+        "y": 560,
+        "body": 16,
+        "torso": 0,
+        "head": 0
+      },
+      {
+        "y": 760,
+        "body": 8,
+        "torso": 0,
+        "head": 0
+      },
+      {
+        "y": 1000,
+        "body": 2,
+        "torso": 0,
+        "head": 0
+      },
+      {
+        "y": 1080,
+        "body": 0,
+        "torso": 0,
+        "head": 0
+      },
+      {
+        "y": 1278,
+        "body": 0,
+        "torso": 0,
+        "head": 0
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "root",
+      "parent": null,
+      "pivot": [
+        0,
+        0
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "body",
+      "parent": "root",
+      "pivot": [
+        627,
+        1278
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "torso",
+      "parent": "body",
+      "pivot": [
+        642,
+        560
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "head",
+      "parent": "torso",
+      "pivot": [
+        636,
+        210
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "frontHair",
+      "parent": "head",
+      "pivot": [
+        605,
+        75
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    },
+    {
+      "id": "backHair",
+      "parent": "head",
+      "pivot": [
+        635,
+        75
+      ],
+      "motion": "none",
+      "maxDegrees": 0,
+      "phase": 0
+    }
+  ],
+  "bindings": {
+    "backhair": "backHair",
+    "legwear": "body",
+    "footwear": "body",
+    "earwear": "head",
+    "bottomwear": "body",
+    "neck": "torso",
+    "handwear": "torso",
+    "topwear": "torso",
+    "ears": "head",
+    "face": "head",
+    "eyebrow": "head",
+    "nose": "head",
+    "mouth": "head",
+    "eyewhite": "head",
+    "irides": "head",
+    "eyelash": "head",
+    "fronthair": "frontHair"
+  },
+  "renderer": {
+    "mode": "shared-webgl-fields-stage1",
+    "module": "mesh-renderer.mjs",
+    "nativeTextureSize": 1280,
+    "presentation": "canvas-copy",
+    "gpuHead": false,
+    "compositePose": "shared-stance-breath-free-hair"
+  },
+  "reviewUi": {
+    "mode": "capability-only",
+    "tabs": [
+      "motion",
+      "layers"
+    ],
+    "controls": [
+      "body",
+      "energy",
+      "auto",
+      "paused",
+      "reference",
+      "show-guides",
+      "view",
+      "zoom",
+      "neutral",
+      "defaults",
+      "bust",
+      "show-bust-field",
+      "show-hair-follow",
+      "blink",
+      "auto-blink"
+    ],
+    "diagnosticTitle": "動作影響範圍"
+  },
+  "landmarks": {
+    "head": [
+      633,
+      105
+    ],
+    "shoulders": [
+      [
+        524,
+        236
+      ],
+      [
+        706,
+        242
+      ]
+    ],
+    "chest": [
+      647,
+      330
+    ],
+    "waist": [
+      645,
+      472
+    ],
+    "hips": [
+      644,
+      562
+    ],
+    "knees": [
+      [
+        637,
+        863
+      ],
+      [
+        673,
+        873
+      ]
+    ],
+    "ankles": [
+      [
+        600,
+        1115
+      ],
+      [
+        652,
+        1138
+      ]
+    ],
+    "fixedShoeRegion": [
+      540,
+      1080,
+      715,
+      1280
+    ]
+  },
+  "limits": [
+    "依原畫修復的本機自動待機候選，尚待使用者目視驗收。",
+    "可見皮膚、衣服與五官採共同變形；鞋子與鞋底區域固定。",
+    "原畫只提供可見像素；沒有新增隱藏人體，髮梢獨立動作只限外側髮絲。",
+    "偽深度依修復後圖層遮罩對齊，用於來源歸屬與遮擋，並非完整3D模型。",
+    "連續半透明來源先合成再以同一網格變形；前髮局部範圍止於肩膀上方，後髮限外側自由髮絲。",
+    "修復候選：眼瞼與睫毛依筆觸輪廓拆分，眼周皮膚固定；眨眼0沿用原圖。待使用者目視確認。"
+  ],
+  "candidate": "motion_v12",
+  "candidateTitle": "Sophia · 閉眼原畫對位修復候選",
+  "bustField": {
+    "mode": "composite-chest-field",
+    "label": "呼吸起伏",
+    "centerX": 647,
+    "centerY": 330,
+    "radiusX": 108,
+    "radiusY": 95,
+    "maxPixels": 2.4,
+    "tileWidth": 16,
+    "tileHeight": 2,
+    "defaultStrength": 65
+  },
+  "hairFollow": {
+    "mode": "idle-pointer-tip-sway-review",
+    "sampling": "analytic-inverse",
+    "parts": {
+      "fronthair": {
+        "bounds": [
+          470,
+          120,
+          520,
+          230
+        ],
+        "rootY": 140,
+        "tipY": 220,
+        "maxPixels": 1.8,
+        "frequency": 6,
+        "damping": 0.85,
+        "pointerGain": 0
+      },
+      "backhair": {
+        "bounds": [
+          388,
+          300,
+          500,
+          605
+        ],
+        "rootY": 320,
+        "tipY": 590,
+        "maxPixels": 3.1,
+        "frequency": 5,
+        "damping": 0.85,
+        "pointerGain": 0
+      }
+    },
+    "idleAroundYaw": {
+      "mode": "yaw-centered-idle-state-review",
+      "settleSeconds": 0.2,
+      "resumeRate": 3,
+      "parts": {
+        "fronthair": {
+          "amplitude": 0.5,
+          "phase": -0.45
+        },
+        "backhair": {
+          "amplitude": 0.6,
+          "phase": -0.8
+        }
+      }
+    }
+  },
+  "extends": "_review/motion_v7/rig.json",
+  "extendsSha256": "2229049E16EC6C567602E7EF6CDB775C47CE9E13A87350A038DBB403E926025E",
+  "eyeRig": {
+    "manifest": "_review/eyes_v4/manifest.json",
+    "manifestSha256": "13332C6906C1945D0EB7D49D257C9504F431BCBD294FA04019596A4C62FA1F55",
+    "gazeResponseRate": 9,
+    "autoBlinkIntervalSeconds": 4.7,
+    "gazeEnabled": false,
+    "note": "Reference registration repair: the SAME similarity transform from open working reference to original face is used for BOTH detached closed lids. No independent closed-eye width normalization or per-eye shear. Source open, underfill and all other rasters unchanged. No gaze/pointer; user review pending.",
+    "blinkOnlySourceComposite": true,
+    "compositeAfterLayer": "eyelash"
+  }
+}

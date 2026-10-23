@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "nonProduction": true,
+  "reviewStatus": "pending",
+  "sourceHead": "_review/eyes_v7/open_assembly.png",
+  "sourceHeadAsset": "_review/eyes_v7/open_assembly.png",
+  "sourceHeadSha256": "A66ECAFFEB8E57DACA3E8DA6A7A651511D579768B45B5B1B3AFAA64A161137E2",
+  "closedSource": "Character/004_Natasha/Natasha_casual_eyeclose.png",
+  "closedSourceSha256": "C627249145E99B332E3F40BF6ECB8B74AB3B762B034385C89A8F0CBA1EF8F0E2",
+  "semanticSource": "_rig_assets/eye_assets.json",
+  "semanticSourceSha256": "1534B633B4EDA9522D2A301FC09F33D7609154766773F307EE3D88235A820D69",
+  "canvas": [
+    1280,
+    1280
+  ],
+  "eyes": {
+    "left": {
+      "center": [
+        645.5,
+        168.5
+      ],
+      "bounds": [
+        612,
+        143,
+        662,
+        186
+      ],
+      "base": {
+        "asset": "left_base.png",
+        "sha256": "8248C2389E6B09907EAA4EFAB6B26B0B05D2C998CE5F379C892289A182576C9A"
+      },
+      "open": {
+        "asset": "left_open.png",
+        "sha256": "B6A5DC30A54DD10E523AE63DE7D582B6AD9E19AE73159D2F9F7851CF23322D8F"
+      },
+      "white": {
+        "asset": "left_white.png",
+        "sha256": "B7839F2BEC8D80252A51AE978A0400FDADF276C23F255E5F39320DDDDD281D94"
+      },
+      "iris": {
+        "asset": "left_iris.png",
+        "sha256": "50430DA8320C1F7E75F6A869FFC489F0D9A439CEAE5B230771D0910BEE7F19E2"
+      },
+      "lash": {
+        "asset": "left_lash.png",
+        "sha256": "6B89D8526591748A4540A060A02A90A1085B8A3EC3512FDF07F1B865A3830BB2"
+      },
+      "closed": {
+        "asset": "left_closed.png",
+        "sha256": "2BE48ED8E5F0E8D383A86CC5678BD8A8F319DDFD86B0DAA7DFF38F041BD5CE8F"
+      },
+      "mask": {
+        "asset": "left_mask.png",
+        "sha256": "B7839F2BEC8D80252A51AE978A0400FDADF276C23F255E5F39320DDDDD281D94"
+      },
+      "closedAlphaPixels": 537
+    },
+    "right": {
+      "center": [
+        716.5,
+        198.0
+      ],
+      "bounds": [
+        690,
+        172,
+        747,
+        215
+      ],
+      "base": {
+        "asset": "right_base.png",
+        "sha256": "8248C2389E6B09907EAA4EFAB6B26B0B05D2C998CE5F379C892289A182576C9A"
+      },
+      "open": {
+        "asset": "right_open.png",
+        "sha256": "1512F1AE1032FC89429B6B6B008ACB8D88AE8FE159EB10D6F4DF9355ED55F2BB"
+      },
+      "white": {
+        "asset": "right_white.png",
+        "sha256": "DC23F5BF9B5C285661546D090E0DAD9A492F7DE76E83A5B160BCA5FFF7BEE016"
+      },
+      "iris": {
+        "asset": "right_iris.png",
+        "sha256": "CC45D530B8DBE280AD3DFFEDDDC1A2614B8FB46979FFB2E24D0F2D543DC80125"
+      },
+      "lash": {
+        "asset": "right_lash.png",
+        "sha256": "0F376BB02DDA521F5A28E709B8B818179B69DB9C53B036FE6D62A1D6D688A0C5"
+      },
+      "closed": {
+        "asset": "right_closed.png",
+        "sha256": "B1A0B3D69F69683C10A526F7CC40CC2748C37A1FF1B64C24AD25E3D77F37299D"
+      },
+      "mask": {
+        "asset": "right_mask.png",
+        "sha256": "DC23F5BF9B5C285661546D090E0DAD9A492F7DE76E83A5B160BCA5FFF7BEE016"
+      },
+      "closedAlphaPixels": 1068
+    }
+  },
+  "gazeLimit": [
+    1.75,
+    1.5
+  ],
+  "registration": {
+    "method": "SIFT-RANSAC closed reference -> source -> exact assembly",
+    "closedToSource": {
+      "keypoints": [
+        996,
+        922
+      ],
+      "goodMatches": 74,
+      "inliers": 42,
+      "inlierRatio": 0.5675675675675675,
+      "medianInlierErrorPx": 1.0790290832519531,
+      "matrix": [
+        [
+          0.7692079614254966,
+          -0.019540067996870126,
+          119.00203588670803
+        ],
+        [
+          -0.002844286438496052,
+          0.7671421958748725,
+          14.75494516582617
+        ],
+        [
+          -1.215264095615819e-05,
+          -2.983533688673421e-05,
+          1.0
+        ]
+      ]
+    },
+    "sourceToAssembly": {
+      "keypoints": [
+        1195,
+        669
+      ],
+      "goodMatches": 382,
+      "inliers": 376,
+      "inlierRatio": 0.9842931937172775,
+      "medianInlierErrorPx": 0.07641424238681793,
+      "matrix": [
+        [
+          0.8328089108835112,
+          0.0012280684018039954,
+          212.9804920393211
+        ],
+        [
+          0.0001278292987991567,
+          0.8336177434407475,
+          -0.14619512095341816
+        ],
+        [
+          -1.8315896126988288e-07,
+          1.5027171191203756e-06,
+          1.0
+        ]
+      ]
+    },
+    "combinedMatrix": [
+      [
+        0.6380112361367621,
+        -0.021685376228454803,
+        312.10445060122703
+      ],
+      [
+        -0.002270942817031193,
+        0.6395049696167029,
+        12.168996341365002
+      ],
+      [
+        -1.2297797818625976e-05,
+        -2.8678949448058543e-05,
+        1.0
+      ]
+    ],
+    "mask": "source difference inside measured semantic eye bounds; face/fronthair/eyebrow/eyewear guards"
+  },
+  "sourceLayers": {
+    "face": "A6BE8F96C66933EA34387AD30E27D370044528D6851F8A34479CC617CBD35AC6",
+    "eyewhite": "94E2780D6777C67D9320606A23934A07E368A22E22B572D232EF6FD769A18FB9",
+    "irides": "2DC63FCD5575B662CF425DADDBF3A22C835C615632A2FA3AEE0E900F9F9C4269",
+    "eyelash": "CB73EE0AF111B379E2E134FFD58D370ECD284A049908C6134F517F59A4853145",
+    "eyebrow": "289D6AFCFB821D12DE7A2FFE901EC9523C56EA885C99BF7C4712E486057DF874",
+    "eyewear": "C5DDD9E60F3C423B8C16EAACBC78984E96513549F9DFBAFF9B5369C1A644A735",
+    "fronthair": "4347FE9BC056D7D612B2520C78CC58052CBF02ABAED5DDF572F215149788D77E"
+  },
+  "note": "Source-derived pending eyelid extraction. Inspect closed alpha, unchanged neutral, native face zoom and moving transitions before approval."
+}
