@@ -23,10 +23,11 @@ const TRANSITION_MS = 800;
 const sleep = (ms) => new Promise((resolve) => browserAnimationClock.setTimeout(resolve, ms));
 const characters = new Map(CHARACTER_DATA.map((character) => [character.id, character]));
 export class EventDialoguePlayback {
-    constructor(modalRoot, ctrl, audio) {
+    constructor(modalRoot, ctrl, audio, projectPortrait = null) {
         this.modalRoot = modalRoot;
         this.ctrl = ctrl;
         this.audio = audio;
+        this.projectPortrait = projectPortrait;
         this.speedPercent = 100;
     }
     play(event, date, lines, options = [], rewards = [], initialBackgroundSceneId = null, preview = {}) {
@@ -84,7 +85,10 @@ export class EventDialoguePlayback {
                 if (actor.exiting)
                     return;
                 const character = characters.get(id);
-                applyPortraitGeometry(actor.element, actor.presentation, character, { ...portraitSettings, standingLineYPercent: standingLineOverride ?? portraitSettings.standingLineYPercent }, portraitLayer.clientWidth, portraitLayer.clientHeight);
+                const stage = { ...portraitSettings, standingLineYPercent: standingLineOverride ?? portraitSettings.standingLineYPercent };
+                const projected = this.projectPortrait?.(actor.presentation, character, stage, backgroundSceneId)
+                    ?? { presentation: actor.presentation, character, stage };
+                applyPortraitGeometry(actor.element, projected.presentation, projected.character, projected.stage, portraitLayer.clientWidth, portraitLayer.clientHeight);
             };
             let stopSceneSizing = () => { };
             let activeBackgroundLayer = 0;

@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>雙層劇本驗收</title><link rel="stylesheet" href="dialogue.css">
+<style>body{margin:24px;background:#24212c;color:#f3ead7;font:16px/1.6 sans-serif}body:has(.event-dialogue-overlay){overflow:hidden}textarea{box-sizing:border-box;width:100%;height:220px}#check,#play{padding:10px;margin:8px}pre{white-space:pre-wrap;overflow-wrap:anywhere}.overlay{position:fixed;inset:0}.event-dialogue-overlay{width:min(100vw,var(--review-width,100vw));height:min(100vh,var(--review-height,100vh))}.event-dialogue-scene{line-height:normal}.event-dialogue-scene,.event-dialogue-scene *{box-sizing:border-box}#status{white-space:pre-wrap}table{border-collapse:collapse}td,th{border:1px solid #82765c;padding:6px}</style>
+<h1>雙層劇本驗收</h1><p>這是獨立驗收頁，不改正式劇情或存檔。貼上 vn-story/1 JSON，先檢查，再用現有對話舞台播放。Escape 退出。<a href="portrait-placement.html" target="_blank" rel="noopener">角色定位校準</a></p>
+<label for="source">正式劇本與獨立審稿 JSON</label><textarea id="source"></textarea>
+<div><label for="frame-size">試播框尺寸</label><select id="frame-size"><option value="auto">目前視窗</option><option value="1280x720">1280×720</option><option value="844x390">844×390 橫向</option><option value="640x360">640×360 橫向</option></select><button id="check">檢查格式</button><button id="play" disabled>試播（不存檔）</button></div>
+<p id="status" role="status">尚未檢查</p><h2>五欄閱讀稿</h2><pre id="draft"></pre><h2>審稿意見（不進入播放資料）</h2><pre id="review"></pre>
+<h2>實機顯示檢查</h2><p>每條路線仍須逐頁確認。以下只記錄已顯示文字的溢出，沒有走過的節點不算通過。</p><pre id="layout"></pre><div id="modal-root"></div>
+<script type="module" src="story-review.js"></script></html>
